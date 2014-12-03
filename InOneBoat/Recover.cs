@@ -23,14 +23,21 @@ namespace InOneBoat
         private void buttonOk_Click(object sender, EventArgs e)
         {
             getPass();
+            sendMail();
+        }
+
+        private void sendMail()
+        {
             if (Password != "")
             {
 
                 string email = textBoxEmail.Text;
                 //послать пароль на почту
 
+                MessageBox.Show("Пароль отправлен на Ваш email.");
             }
-            else {
+            else
+            {
                 textBoxEmail.Text = "";
                 textBoxLogin.Text = "";
                 MessageBox.Show("Неверный логин или email.");
@@ -67,5 +74,24 @@ namespace InOneBoat
                 }
             }
         }
+
+        private void textBoxLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                getPass();
+                sendMail();
+            }
+        }
+
+        private void textBoxEmail_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                getPass();
+                sendMail();
+            }
+        }
+
     }
 }

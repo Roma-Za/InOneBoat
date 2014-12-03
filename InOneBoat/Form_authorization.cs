@@ -28,8 +28,23 @@ namespace InOneBoat
         private void checkAut()
         {
             Auth = new AuthorizationClass(connect, textBoxLog.Text, maskedTextBoxPass.Text);
-            if (Auth.Login!=null)
-            MessageBox.Show(String.Format("Здравствуйте {0} {1}.", Auth.Name, Auth.Patronymic));
+            if (Auth.Login != null)
+            {
+                MessageBox.Show(String.Format("Здравствуйте {0} {1}.", Auth.Name, Auth.Patronymic));
+                switch (Auth.UserType)
+                {
+                    case "admin":
+                        {
+                            AdminForm adm = new AdminForm();
+                            this.Visible = false;
+                            adm.ShowDialog();
+                            clearAuthorization();
+                            this.Visible = true;
+                        } break;
+                    default:
+                        break;
+                }
+            }
         }
 
         private void linkLabelRecover_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -63,7 +78,6 @@ namespace InOneBoat
             Auth = null;
             textBoxLog.Text = "";
             maskedTextBoxPass.Text = "";
-            //role = "";
         }
     }
 }
