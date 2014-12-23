@@ -14,7 +14,7 @@ namespace InOneBoat
     public partial class Form_authorization : Form
     {
         private string connect = ConfigurationManager.ConnectionStrings["dbProject"].ConnectionString;
-        internal AuthorizationClass Auth { set; get; }
+        public AuthorizationClass Auth { set; get; }
         public Form_authorization()
         {
             InitializeComponent();           
@@ -35,7 +35,7 @@ namespace InOneBoat
                 {
                     case "admin":
                         {
-                            AdminForm adm = new AdminForm();
+                            AdminForm adm = new AdminForm(Auth);
                             this.Visible = false;
                             adm.ShowDialog();
                             clearAuthorization();

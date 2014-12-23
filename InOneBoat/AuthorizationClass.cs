@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace InOneBoat
 {
-    internal class AuthorizationClass
+    public class AuthorizationClass
     {
         public string Login { set; get; }
         public string Password { set; get; }
@@ -18,9 +18,12 @@ namespace InOneBoat
         public string Patronymic { set; get; }
         public string Phone_number { set; get; }
         public string Email { set; get; }
+        public string ConnString { set; get; }
 
         public AuthorizationClass(string connect, string login, string password)
         {
+            ConnString = connect;
+
             string commandText = "SELECT * FROM person WHERE user_name = @login AND password= @pass";
 
             using (SqlConnection sql_connect = new SqlConnection(connect))
