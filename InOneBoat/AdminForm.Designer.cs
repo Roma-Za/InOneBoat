@@ -76,6 +76,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
+            this.comboBoxProjP3 = new System.Windows.Forms.ComboBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.buttonCancelP3 = new System.Windows.Forms.Button();
             this.buttonOkP3 = new System.Windows.Forms.Button();
             this.checkedListBoxP3 = new System.Windows.Forms.CheckedListBox();
@@ -101,13 +103,30 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.comboBoxProjP3 = new System.Windows.Forms.ComboBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.comboBoxProjP5 = new System.Windows.Forms.ComboBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.buttonCancelP5 = new System.Windows.Forms.Button();
+            this.buttonOkP5 = new System.Windows.Forms.Button();
+            this.checkedListBoxEplP5 = new System.Windows.Forms.CheckedListBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.listBoxEmplP6 = new System.Windows.Forms.ListBox();
+            this.comboBoxProjP6 = new System.Windows.Forms.ComboBox();
+            this.buttonCancelP6 = new System.Windows.Forms.Button();
+            this.label25 = new System.Windows.Forms.Label();
+            this.buttonOkP6 = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
+            this.заказчикаИзПроектаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label27 = new System.Windows.Forms.Label();
+            this.listBoxCustP6 = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -167,7 +186,8 @@
             this.работникаИзПроектаToolStripMenuItem,
             this.работникаИзБазыToolStripMenuItem,
             this.пустойПроектToolStripMenuItem,
-            this.заказчикаИзБазыToolStripMenuItem});
+            this.заказчикаИзБазыToolStripMenuItem,
+            this.заказчикаИзПроектаToolStripMenuItem});
             this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
             this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.удалитьToolStripMenuItem.Text = "Удалить";
@@ -177,6 +197,7 @@
             this.работникаИзПроектаToolStripMenuItem.Name = "работникаИзПроектаToolStripMenuItem";
             this.работникаИзПроектаToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.работникаИзПроектаToolStripMenuItem.Text = "работника из проекта";
+            this.работникаИзПроектаToolStripMenuItem.Click += new System.EventHandler(this.работникаИзПроектаToolStripMenuItem_Click);
             // 
             // работникаИзБазыToolStripMenuItem
             // 
@@ -189,6 +210,7 @@
             this.пустойПроектToolStripMenuItem.Name = "пустойПроектToolStripMenuItem";
             this.пустойПроектToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.пустойПроектToolStripMenuItem.Text = "пустой проект";
+            this.пустойПроектToolStripMenuItem.Click += new System.EventHandler(this.пустойПроектToolStripMenuItem_Click);
             // 
             // заказчикаИзБазыToolStripMenuItem
             // 
@@ -527,8 +549,27 @@
             this.panel3.Controls.Add(this.label12);
             this.panel3.Location = new System.Drawing.Point(170, 27);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(519, 320);
+            this.panel3.Size = new System.Drawing.Size(34, 320);
             this.panel3.TabIndex = 3;
+            // 
+            // comboBoxProjP3
+            // 
+            this.comboBoxProjP3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxProjP3.FormattingEnabled = true;
+            this.comboBoxProjP3.Location = new System.Drawing.Point(94, 30);
+            this.comboBoxProjP3.Name = "comboBoxProjP3";
+            this.comboBoxProjP3.Size = new System.Drawing.Size(404, 21);
+            this.comboBoxProjP3.TabIndex = 5;
+            this.comboBoxProjP3.SelectedIndexChanged += new System.EventHandler(this.comboBoxProjP3_SelectedIndexChanged);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(17, 34);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(52, 13);
+            this.label22.TabIndex = 4;
+            this.label22.Text = "Проекты";
             // 
             // buttonCancelP3
             // 
@@ -767,30 +808,176 @@
             this.label21.TabIndex = 22;
             this.label21.Text = "Эл. почта";
             // 
-            // label22
+            // panel5
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(17, 34);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(52, 13);
-            this.label22.TabIndex = 4;
-            this.label22.Text = "Проекты";
+            this.panel5.Controls.Add(this.comboBoxProjP5);
+            this.panel5.Controls.Add(this.label23);
+            this.panel5.Controls.Add(this.buttonCancelP5);
+            this.panel5.Controls.Add(this.buttonOkP5);
+            this.panel5.Controls.Add(this.checkedListBoxEplP5);
+            this.panel5.Controls.Add(this.label24);
+            this.panel5.Location = new System.Drawing.Point(225, 27);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(54, 320);
+            this.panel5.TabIndex = 5;
             // 
-            // comboBoxProjP3
+            // comboBoxProjP5
             // 
-            this.comboBoxProjP3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxProjP3.FormattingEnabled = true;
-            this.comboBoxProjP3.Location = new System.Drawing.Point(94, 30);
-            this.comboBoxProjP3.Name = "comboBoxProjP3";
-            this.comboBoxProjP3.Size = new System.Drawing.Size(404, 21);
-            this.comboBoxProjP3.TabIndex = 5;
-            this.comboBoxProjP3.SelectedIndexChanged += new System.EventHandler(this.comboBoxProjP3_SelectedIndexChanged);
+            this.comboBoxProjP5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxProjP5.FormattingEnabled = true;
+            this.comboBoxProjP5.Location = new System.Drawing.Point(88, 22);
+            this.comboBoxProjP5.Name = "comboBoxProjP5";
+            this.comboBoxProjP5.Size = new System.Drawing.Size(404, 21);
+            this.comboBoxProjP5.TabIndex = 11;
+            this.comboBoxProjP5.SelectedIndexChanged += new System.EventHandler(this.comboBoxProjP5_SelectedIndexChanged);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(11, 26);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(52, 13);
+            this.label23.TabIndex = 10;
+            this.label23.Text = "Проекты";
+            // 
+            // buttonCancelP5
+            // 
+            this.buttonCancelP5.Location = new System.Drawing.Point(268, 275);
+            this.buttonCancelP5.Name = "buttonCancelP5";
+            this.buttonCancelP5.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancelP5.TabIndex = 9;
+            this.buttonCancelP5.Text = "Отмена";
+            this.buttonCancelP5.UseVisualStyleBackColor = true;
+            this.buttonCancelP5.Click += new System.EventHandler(this.buttonCancelP5_Click);
+            // 
+            // buttonOkP5
+            // 
+            this.buttonOkP5.Location = new System.Drawing.Point(88, 275);
+            this.buttonOkP5.Name = "buttonOkP5";
+            this.buttonOkP5.Size = new System.Drawing.Size(75, 23);
+            this.buttonOkP5.TabIndex = 8;
+            this.buttonOkP5.Text = "Ок";
+            this.buttonOkP5.UseVisualStyleBackColor = true;
+            this.buttonOkP5.Click += new System.EventHandler(this.buttonOkP5_Click);
+            // 
+            // checkedListBoxEplP5
+            // 
+            this.checkedListBoxEplP5.FormattingEnabled = true;
+            this.checkedListBoxEplP5.Location = new System.Drawing.Point(88, 94);
+            this.checkedListBoxEplP5.Name = "checkedListBoxEplP5";
+            this.checkedListBoxEplP5.Size = new System.Drawing.Size(404, 124);
+            this.checkedListBoxEplP5.TabIndex = 7;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(11, 70);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(117, 13);
+            this.label24.TabIndex = 6;
+            this.label24.Text = "Работники  в проекте";
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.label27);
+            this.panel6.Controls.Add(this.listBoxCustP6);
+            this.panel6.Controls.Add(this.listBoxEmplP6);
+            this.panel6.Controls.Add(this.comboBoxProjP6);
+            this.panel6.Controls.Add(this.buttonCancelP6);
+            this.panel6.Controls.Add(this.label25);
+            this.panel6.Controls.Add(this.buttonOkP6);
+            this.panel6.Controls.Add(this.label26);
+            this.panel6.Location = new System.Drawing.Point(294, 25);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(225, 322);
+            this.panel6.TabIndex = 6;
+            // 
+            // listBoxEmplP6
+            // 
+            this.listBoxEmplP6.FormattingEnabled = true;
+            this.listBoxEmplP6.Location = new System.Drawing.Point(94, 88);
+            this.listBoxEmplP6.Name = "listBoxEmplP6";
+            this.listBoxEmplP6.Size = new System.Drawing.Size(404, 56);
+            this.listBoxEmplP6.TabIndex = 12;
+            // 
+            // comboBoxProjP6
+            // 
+            this.comboBoxProjP6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxProjP6.FormattingEnabled = true;
+            this.comboBoxProjP6.Location = new System.Drawing.Point(94, 24);
+            this.comboBoxProjP6.Name = "comboBoxProjP6";
+            this.comboBoxProjP6.Size = new System.Drawing.Size(404, 21);
+            this.comboBoxProjP6.TabIndex = 11;
+            this.comboBoxProjP6.SelectedIndexChanged += new System.EventHandler(this.comboBoxProjP6_SelectedIndexChanged);
+            // 
+            // buttonCancelP6
+            // 
+            this.buttonCancelP6.Location = new System.Drawing.Point(329, 267);
+            this.buttonCancelP6.Name = "buttonCancelP6";
+            this.buttonCancelP6.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancelP6.TabIndex = 9;
+            this.buttonCancelP6.Text = "Отмена";
+            this.buttonCancelP6.UseVisualStyleBackColor = true;
+            this.buttonCancelP6.Click += new System.EventHandler(this.buttonCancelP6_Click);
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(17, 27);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(52, 13);
+            this.label25.TabIndex = 10;
+            this.label25.Text = "Проекты";
+            // 
+            // buttonOkP6
+            // 
+            this.buttonOkP6.Location = new System.Drawing.Point(154, 267);
+            this.buttonOkP6.Name = "buttonOkP6";
+            this.buttonOkP6.Size = new System.Drawing.Size(75, 23);
+            this.buttonOkP6.TabIndex = 8;
+            this.buttonOkP6.Text = "Ок";
+            this.buttonOkP6.UseVisualStyleBackColor = true;
+            this.buttonOkP6.Click += new System.EventHandler(this.buttonOkP6_Click);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(17, 64);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(117, 13);
+            this.label26.TabIndex = 6;
+            this.label26.Text = "Работники  в проекте";
+            // 
+            // заказчикаИзПроектаToolStripMenuItem
+            // 
+            this.заказчикаИзПроектаToolStripMenuItem.Name = "заказчикаИзПроектаToolStripMenuItem";
+            this.заказчикаИзПроектаToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.заказчикаИзПроектаToolStripMenuItem.Text = "заказчика из проекта";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(17, 182);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(55, 13);
+            this.label27.TabIndex = 13;
+            this.label27.Text = "Заказчик";
+            // 
+            // listBoxCustP6
+            // 
+            this.listBoxCustP6.FormattingEnabled = true;
+            this.listBoxCustP6.Location = new System.Drawing.Point(93, 182);
+            this.listBoxCustP6.Name = "listBoxCustP6";
+            this.listBoxCustP6.Size = new System.Drawing.Size(404, 56);
+            this.listBoxCustP6.TabIndex = 12;
             // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(945, 352);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -809,6 +996,10 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -890,6 +1081,23 @@
         private System.Windows.Forms.TextBox textBoxInfoP2;
         private System.Windows.Forms.ComboBox comboBoxProjP3;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.ComboBox comboBoxProjP5;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Button buttonCancelP5;
+        private System.Windows.Forms.Button buttonOkP5;
+        private System.Windows.Forms.CheckedListBox checkedListBoxEplP5;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.ListBox listBoxEmplP6;
+        private System.Windows.Forms.ComboBox comboBoxProjP6;
+        private System.Windows.Forms.Button buttonCancelP6;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Button buttonOkP6;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.ToolStripMenuItem заказчикаИзПроектаToolStripMenuItem;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.ListBox listBoxCustP6;
 
     }
 }
