@@ -39,7 +39,8 @@ namespace InOneBoat
                 {
                     if (item is ComboBox) ((ComboBox)item).Items.Clear();
                 }
-                catch (Exception e) {
+                catch (Exception e)
+                {
                     MessageBox.Show(e.Message);
                 }
                 if (item is CheckBox) ((CheckBox)item).Checked = false;
@@ -232,7 +233,7 @@ namespace InOneBoat
             ClearAll(c);
 
             DicBoss = new Dictionary<String, int>();
-            
+
             string commandText = "SELECT * FROM bosses";
             using (SqlConnection sql_connect = new SqlConnection(connect))
             {
@@ -249,7 +250,7 @@ namespace InOneBoat
                     try
                     {
                         Id = rdr.GetInt32(0);
-                       
+
                     }
                     catch (Exception exep)
                     {
@@ -376,7 +377,7 @@ namespace InOneBoat
                     try
                     {
                         Id = rdr.GetInt32(0);
-                        
+
                     }
                     catch (Exception ex)
                     {
@@ -530,7 +531,7 @@ namespace InOneBoat
                     try
                     {
                         Id = rdr.GetInt32(0);
-                       
+
                     }
                     catch (Exception ex)
                     {
@@ -836,7 +837,7 @@ namespace InOneBoat
             }
             #endregion
 
-            DicEmp = new Dictionary<string,int>();
+            DicEmp = new Dictionary<string, int>();
             string commandT = "SELECT * FROM View_enployee";
             using (SqlConnection sql_connect = new SqlConnection(connect))
             {
@@ -889,7 +890,7 @@ namespace InOneBoat
 
                     }
 
-                    DicEmp.Add(strEmp,Id);
+                    DicEmp.Add(strEmp, Id);
                     #endregion
                 }
 
@@ -898,7 +899,7 @@ namespace InOneBoat
                     if (arrIdEmpol.Contains(item.Value))
                     {
                         checkedListBoxEplP5.Items.Add(item.Key, false);
-                    }                
+                    }
                 }
 
             }
@@ -1070,7 +1071,7 @@ namespace InOneBoat
 
             }
 
-               listBoxCustP6.Items.Clear();
+            listBoxCustP6.Items.Clear();
             #region все заказчики которые уже добавленны в выбранный проект
             string commandTextCust = "SELECT customer_id FROM projects WHERE id = @proj";
             List<int> arrIdCust = new List<int>();
@@ -1109,9 +1110,9 @@ namespace InOneBoat
             string commandCu = "SELECT * FROM View_Customers WHERE id_proj = @proj";
             using (SqlConnection sql_connect = new SqlConnection(connect))
             {
-   
+
                 sql_connect.Open();
-                SqlCommand cmd = sql_connect.CreateCommand();             
+                SqlCommand cmd = sql_connect.CreateCommand();
                 int value = 0;
                 if (!DicProj.TryGetValue(comboBoxProjP6.Text, out value)) MessageBox.Show("ошибка поиска значения по ключу");
                 cmd.Parameters.AddWithValue("@proj", value);
@@ -1166,7 +1167,7 @@ namespace InOneBoat
                     }
                     try
                     {
-                       rdr.GetInt32(4);
+                        rdr.GetInt32(4);
 
                     }
                     catch (Exception)
@@ -1187,7 +1188,7 @@ namespace InOneBoat
 
         private void buttonOkP6_Click(object sender, EventArgs e)
         {
-            if (listBoxEmplP6.Items.Count == 0 && listBoxCustP6.Items.Count==0)
+            if (listBoxEmplP6.Items.Count == 0)
             {
                 using (SqlConnection sql_connect = new SqlConnection(connect))
                 {
@@ -1220,7 +1221,8 @@ namespace InOneBoat
                 HideAllPanel();
                 menuStrip1.Enabled = true;
             }
-            else {
+            else
+            {
                 MessageBox.Show("Можно удалить только пустой проект.");
             }
         }
@@ -1284,6 +1286,202 @@ namespace InOneBoat
             panel6.Visible = true;
             panel6.Dock = DockStyle.Fill;
             menuStrip1.Enabled = false;
+        }
+
+        #endregion
+
+        #region удалить заказчика из базы
+        private void заказчикаИзБазыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Control.ControlCollection c = panel7.Controls;
+            ClearAll(c);
+
+            DicCust = new Dictionary<string, int>();
+            string commandCu = "SELECT * FROM bosses";
+            using (SqlConnection sql_connect = new SqlConnection(connect))
+            {
+
+                sql_connect.Open();
+                SqlCommand cmd = sql_connect.CreateCommand();
+                cmd.CommandText = commandCu;
+
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    #region присвоение
+                    int Id = 0;
+                    String strEmpCus = "";
+
+                    try
+                    {
+                        Id = rdr.GetInt32(0);
+
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("ошибка конвертации " + Id);
+                    }
+
+                    try
+                    {
+                        strEmpCus += rdr.GetString(1);
+                        strEmpCus += " ";
+                    }
+                    catch (Exception)
+                    {
+
+                        strEmpCus += " ";
+                    }
+                    try
+                    {
+                        strEmpCus += rdr.GetString(2);
+                        strEmpCus += " ";
+                    }
+                    catch (Exception)
+                    {
+                        strEmpCus += " ";
+
+                    }
+                    try
+                    {
+                        strEmpCus += rdr.GetString(3);
+                        strEmpCus += " ";
+                    }
+                    catch (Exception)
+                    {
+                        strEmpCus += " ";
+
+                    }
+            
+                    try
+                    {
+                        DicCust.Add(strEmpCus, Id);
+                    }
+                    catch
+                    {
+                    }
+
+                    #endregion
+                }
+
+                foreach (var item in DicCust)
+                {
+                    comboBoxCusP7.Items.Add(item.Key);
+                }
+            }
+
+            panel7.Visible = true;
+            panel7.Dock = DockStyle.Fill;
+            menuStrip1.Enabled = false;
+        }
+
+        private void comboBoxCusP7_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listBoxProjP7.Items.Clear();
+            #region все id проектов заказчика
+            string commandText = "SELECT id_proj FROM View_Customers WHERE id = @cust";
+            List<int> arrIdProj = new List<int>();
+            using (SqlConnection sql_connect = new SqlConnection(connect))
+            {
+                sql_connect.Open();
+                SqlCommand cmd = sql_connect.CreateCommand();
+                cmd.CommandText = commandText;
+
+                int value = 0;
+                if (!DicCust.TryGetValue(comboBoxCusP7.Text, out value)) MessageBox.Show("ошибка поиска значения по ключу");
+                cmd.Parameters.AddWithValue("@cust", value);
+                SqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+
+                    int idCust = 0;
+
+                    try
+                    {
+                        idCust = rdr.GetInt32(0);
+                    }
+                    catch (Exception)
+                    {
+                        idCust = 0;
+                    }
+                    if (idCust != 0) arrIdProj.Add(idCust);
+                }
+
+            }
+            #endregion
+
+            if (arrIdProj.Count > 0)
+            {
+
+                #region вывод всех проектов заказчика
+                string commandText2 = "SELECT project_name FROM projects WHERE id = @pr_id";
+                foreach (var item in arrIdProj)
+                {
+                    using (SqlConnection sql_connect = new SqlConnection(connect))
+                    {
+                        sql_connect.Open();
+                        SqlCommand cmd = sql_connect.CreateCommand();
+                        cmd.CommandText = commandText2;
+                        cmd.Parameters.AddWithValue("@pr_id", item);
+                        SqlDataReader rdr = cmd.ExecuteReader();
+                        while (rdr.Read())
+                        {
+                            listBoxProjP7.Items.Add(rdr.GetString(0));
+                        }
+                    }
+                }
+                #endregion
+            }
+        }
+
+        private void buttonOkP7_Click(object sender, EventArgs e)
+        { 
+          
+            if (listBoxProjP7.Items.Count == 0)
+            {  
+                #region удалить заказчика
+                string commandText = "DELETE FROM customers WHERE id = @cust";
+                using (SqlConnection sql_connect = new SqlConnection(connect))
+                {
+                    sql_connect.Open();
+
+                    using (SqlCommand cmd = new SqlCommand(commandText, sql_connect))
+                    {
+                     
+                        SqlParameter param1 = new SqlParameter();
+                        param1.ParameterName = "@cust";
+                        param1.SqlDbType = SqlDbType.Int;
+                        int Id = 0;
+                        if (!DicCust.TryGetValue(comboBoxCusP7.Text, out Id)) MessageBox.Show("ошибка поиска значения по ключу");
+                        param1.Value = Id;
+                        param1.Direction = ParameterDirection.Input;
+                        cmd.Parameters.Add(param1);
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                   
+
+                }
+                #endregion
+                Control.ControlCollection c = panel7.Controls;
+                ClearAll(c);
+                HideAllPanel();
+                menuStrip1.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Нельзя удалить заказчика с проектами.");
+            }
+        }
+
+        private void buttonCancelP7_Click(object sender, EventArgs e)
+        {
+            Control.ControlCollection c = panel7.Controls;
+            ClearAll(c);
+            HideAllPanel();
+            menuStrip1.Enabled = true;
         }
 
         #endregion
