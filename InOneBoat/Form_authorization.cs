@@ -1,20 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
+using System.Data.SqlClient;
 
 namespace InOneBoat
 {
     public partial class Form_authorization : Form
     {
         private string connect = ConfigurationManager.ConnectionStrings["dbProject"].ConnectionString;
-        public AuthorizationClass Auth { set; get; }
+        private string ValidMessage = "";
         public Form_authorization()
         {
             InitializeComponent();           
@@ -27,24 +21,84 @@ namespace InOneBoat
 
         private void checkAut()
         {
-            Auth = new AuthorizationClass(connect, textBoxLog.Text, maskedTextBoxPass.Text);
-            if (Auth.Login != null)
+            
+            string commandText = "SELECT user_types.name FROM users INNER JOIN user_types ON users.user_type_id = user_types.id WHERE (((users.user_name) = @login) AND ((users.password) = @pass))";
+            string login = textBoxLog.Text;
+            string password = maskedTextBoxPass.Text;
+            if (ValidOk(login) && ValidOk(password))
             {
-                MessageBox.Show(String.Format("Здравствуйте {0} {1}.", Auth.Name, Auth.Patronymic));
-                switch (Auth.UserType)
+                string type = "";
+                using (SqlConnection sql_connect = new SqlConnection(connect))
                 {
-                    case "admin":
+                    sql_connect.Open();
+                    SqlCommand cmd = sql_connect.CreateCommand();
+                    cmd.CommandText = commandText;
+
+                    cmd.Parameters.AddWithValue("@login", login);
+                    cmd.Parameters.AddWithValue("@pass", password);
+
+                    SqlDataReader rdr = cmd.ExecuteReader();
+                    while (rdr.Read())
+                    {
+                        try
                         {
-                            AdminForm adm = new AdminForm(Auth);
-                            this.Visible = false;
-                            adm.ShowDialog();
-                            clearAuthorization();
-                            this.Visible = true;
-                        } break;
-                    default:
-                        break;
+                            type = rdr.GetString(0);
+                        }
+                        catch (Exception)
+                        {
+                            type = "";
+                        }
+
+                    }
+
+                    if (type != "")
+                    {
+                        switch (type)
+                        {
+                            case "admin":
+                                {
+                                    AdminForm adm = new AdminForm();
+                                    this.Visible = false;
+                                    adm.ShowDialog();
+                                    clearAuthorization();
+                                    this.Visible = true;
+                                } break;
+                            case "customer":
+                                {
+                                    CustomerForm cust = new CustomerForm();
+                                    this.Visible = false;
+                                    cust.ShowDialog();
+                                    clearAuthorization();
+                                    this.Visible = true;
+                                } break;
+                            case "employee":
+                                {
+                                    EmployeeForm empl = new EmployeeForm();
+                                    this.Visible = false;
+                                    empl.ShowDialog();
+                                    clearAuthorization();
+                                    this.Visible = true;
+                                } break;
+                            default:
+                                break;
+                        }
+                    }
                 }
             }
+            else {
+                MessageBox.Show(ValidMessage);
+            }
+        }
+
+        private bool ValidOk(string str)
+        {
+            Validator val = new Validator(str);
+            val.addValidator(new InOneBoat.Validators.IsFilled());
+            if (!val.check()) {
+                ValidMessage += val.getCause(); 
+                return false;
+            }
+            return true;
         }
 
         private void linkLabelRecover_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -75,9 +129,9 @@ namespace InOneBoat
 
         private void clearAuthorization()
         {
-            Auth = null;
             textBoxLog.Text = "";
             maskedTextBoxPass.Text = "";
+            ValidMessage = "";
         }
     }
 }

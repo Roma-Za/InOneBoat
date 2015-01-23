@@ -37,9 +37,9 @@
             this.работникаВПроектToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.работникаИзПроектаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.работникаИзБазыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.пустойПроектToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.заказчикаИзБазыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.работникаИзБазыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.информациюОПользователяхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.информациюОПроектеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -87,10 +87,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.buttonCancelP4 = new System.Windows.Forms.Button();
             this.buttonOkP4 = new System.Windows.Forms.Button();
-            this.comboBoxUserTypeP4 = new System.Windows.Forms.ComboBox();
             this.textBoxPassP4 = new System.Windows.Forms.TextBox();
             this.textBoxLogP4 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.textBoxEmailP4 = new System.Windows.Forms.TextBox();
@@ -126,6 +124,67 @@
             this.label29 = new System.Windows.Forms.Label();
             this.comboBoxCusP7 = new System.Windows.Forms.ComboBox();
             this.label28 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel_2_in_P8 = new System.Windows.Forms.Panel();
+            this.checkBox_send_P2_in_P8 = new System.Windows.Forms.CheckBox();
+            this.textBox_Email_P2_in_P8 = new System.Windows.Forms.TextBox();
+            this.textBox_Phone_P2_in_P8 = new System.Windows.Forms.TextBox();
+            this.textBox_Pat_P2_in_P8 = new System.Windows.Forms.TextBox();
+            this.textBox_name_P2_in_P8 = new System.Windows.Forms.TextBox();
+            this.textBox_Sur_P2_in_P8 = new System.Windows.Forms.TextBox();
+            this.comboBox_role_P2_in_P8 = new System.Windows.Forms.ComboBox();
+            this.textBox_type_P2_in_P8 = new System.Windows.Forms.TextBox();
+            this.textBox_pass_P2_in_P8 = new System.Windows.Forms.TextBox();
+            this.textBox_log_P2_in_P8 = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.panel1_in_P8 = new System.Windows.Forms.Panel();
+            this.textBox_info_P1_in_P8 = new System.Windows.Forms.TextBox();
+            this.textBox_email_P1_in_P8 = new System.Windows.Forms.TextBox();
+            this.textBox_phon_P1_in_P8 = new System.Windows.Forms.TextBox();
+            this.textBox_Pat_P1_in_P8 = new System.Windows.Forms.TextBox();
+            this.textBox_name_P1_in_P8 = new System.Windows.Forms.TextBox();
+            this.textBox_Sur_P1_in_P8 = new System.Windows.Forms.TextBox();
+            this.textBox_user_type_P1_in_P8 = new System.Windows.Forms.TextBox();
+            this.textBox_pass_P1_in_P8 = new System.Windows.Forms.TextBox();
+            this.textBox_log_P1_in_P8 = new System.Windows.Forms.TextBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.radioButtonEmplP8 = new System.Windows.Forms.RadioButton();
+            this.radioButtonCustP8 = new System.Windows.Forms.RadioButton();
+            this.buttonCancelP8 = new System.Windows.Forms.Button();
+            this.buttonOkP8 = new System.Windows.Forms.Button();
+            this.comboBoxUserP8 = new System.Windows.Forms.ComboBox();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.buttonCancelP9 = new System.Windows.Forms.Button();
+            this.buttonOkP9 = new System.Windows.Forms.Button();
+            this.label33 = new System.Windows.Forms.Label();
+            this.listBoxProjP9 = new System.Windows.Forms.ListBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.comboBoxEmplP9 = new System.Windows.Forms.ComboBox();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.comboBoxProjP10 = new System.Windows.Forms.ComboBox();
+            this.label51 = new System.Windows.Forms.Label();
+            this.buttonCancelP10 = new System.Windows.Forms.Button();
+            this.buttonOkP10 = new System.Windows.Forms.Button();
+            this.textBoxDescrP10 = new System.Windows.Forms.TextBox();
+            this.label50 = new System.Windows.Forms.Label();
+            this.textBoxNameP10 = new System.Windows.Forms.TextBox();
+            this.label49 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -134,6 +193,11 @@
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel_2_in_P8.SuspendLayout();
+            this.panel1_in_P8.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -191,9 +255,9 @@
             // 
             this.удалитьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.работникаИзПроектаToolStripMenuItem,
-            this.работникаИзБазыToolStripMenuItem,
             this.пустойПроектToolStripMenuItem,
-            this.заказчикаИзБазыToolStripMenuItem});
+            this.заказчикаИзБазыToolStripMenuItem,
+            this.работникаИзБазыToolStripMenuItem});
             this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
             this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.удалитьToolStripMenuItem.Text = "Удалить";
@@ -204,12 +268,6 @@
             this.работникаИзПроектаToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.работникаИзПроектаToolStripMenuItem.Text = "работника из проекта";
             this.работникаИзПроектаToolStripMenuItem.Click += new System.EventHandler(this.работникаИзПроектаToolStripMenuItem_Click);
-            // 
-            // работникаИзБазыToolStripMenuItem
-            // 
-            this.работникаИзБазыToolStripMenuItem.Name = "работникаИзБазыToolStripMenuItem";
-            this.работникаИзБазыToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.работникаИзБазыToolStripMenuItem.Text = "работника из базы";
             // 
             // пустойПроектToolStripMenuItem
             // 
@@ -225,6 +283,13 @@
             this.заказчикаИзБазыToolStripMenuItem.Text = "заказчика из базы";
             this.заказчикаИзБазыToolStripMenuItem.Click += new System.EventHandler(this.заказчикаИзБазыToolStripMenuItem_Click);
             // 
+            // работникаИзБазыToolStripMenuItem
+            // 
+            this.работникаИзБазыToolStripMenuItem.Name = "работникаИзБазыToolStripMenuItem";
+            this.работникаИзБазыToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.работникаИзБазыToolStripMenuItem.Text = "работника из базы";
+            this.работникаИзБазыToolStripMenuItem.Click += new System.EventHandler(this.работникаИзБазыToolStripMenuItem_Click);
+            // 
             // редактироватьToolStripMenuItem
             // 
             this.редактироватьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -239,12 +304,14 @@
             this.информациюОПользователяхToolStripMenuItem.Name = "информациюОПользователяхToolStripMenuItem";
             this.информациюОПользователяхToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.информациюОПользователяхToolStripMenuItem.Text = "информацию о пользователях";
+            this.информациюОПользователяхToolStripMenuItem.Click += new System.EventHandler(this.информациюОПользователяхToolStripMenuItem_Click);
             // 
             // информациюОПроектеToolStripMenuItem
             // 
             this.информациюОПроектеToolStripMenuItem.Name = "информациюОПроектеToolStripMenuItem";
             this.информациюОПроектеToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.информациюОПроектеToolStripMenuItem.Text = "информацию о проекте";
+            this.информациюОПроектеToolStripMenuItem.Click += new System.EventHandler(this.информациюОПроектеToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -271,7 +338,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(29, 320);
+            this.panel1.Size = new System.Drawing.Size(26, 320);
             this.panel1.TabIndex = 1;
             // 
             // buttonCancelP1
@@ -298,11 +365,6 @@
             // 
             this.comboBoxRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxRole.FormattingEnabled = true;
-            this.comboBoxRole.Items.AddRange(new object[] {
-            "PM",
-            "QA",
-            "Dev",
-            "Admin"});
             this.comboBoxRole.Location = new System.Drawing.Point(440, 93);
             this.comboBoxRole.Name = "comboBoxRole";
             this.comboBoxRole.Size = new System.Drawing.Size(255, 21);
@@ -312,9 +374,6 @@
             // 
             this.comboBoxUserType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxUserType.FormattingEnabled = true;
-            this.comboBoxUserType.Items.AddRange(new object[] {
-            "Администратор",
-            "Работник"});
             this.comboBoxUserType.Location = new System.Drawing.Point(440, 66);
             this.comboBoxUserType.Name = "comboBoxUserType";
             this.comboBoxUserType.Size = new System.Drawing.Size(255, 21);
@@ -470,9 +529,9 @@
             this.panel2.Controls.Add(this.lable12);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label10);
-            this.panel2.Location = new System.Drawing.Point(108, 27);
+            this.panel2.Location = new System.Drawing.Point(83, 27);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(45, 320);
+            this.panel2.Size = new System.Drawing.Size(22, 320);
             this.panel2.TabIndex = 2;
             // 
             // textBoxInfoP2
@@ -554,9 +613,9 @@
             this.panel3.Controls.Add(this.buttonOkP3);
             this.panel3.Controls.Add(this.checkedListBoxP3);
             this.panel3.Controls.Add(this.label12);
-            this.panel3.Location = new System.Drawing.Point(170, 27);
+            this.panel3.Location = new System.Drawing.Point(113, 27);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(34, 320);
+            this.panel3.Size = new System.Drawing.Size(22, 320);
             this.panel3.TabIndex = 3;
             // 
             // comboBoxProjP3
@@ -621,10 +680,8 @@
             this.panel4.Controls.Add(this.label13);
             this.panel4.Controls.Add(this.buttonCancelP4);
             this.panel4.Controls.Add(this.buttonOkP4);
-            this.panel4.Controls.Add(this.comboBoxUserTypeP4);
             this.panel4.Controls.Add(this.textBoxPassP4);
             this.panel4.Controls.Add(this.textBoxLogP4);
-            this.panel4.Controls.Add(this.label14);
             this.panel4.Controls.Add(this.label15);
             this.panel4.Controls.Add(this.label16);
             this.panel4.Controls.Add(this.textBoxEmailP4);
@@ -637,9 +694,9 @@
             this.panel4.Controls.Add(this.label19);
             this.panel4.Controls.Add(this.label20);
             this.panel4.Controls.Add(this.label21);
-            this.panel4.Location = new System.Drawing.Point(56, 27);
+            this.panel4.Location = new System.Drawing.Point(44, 27);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(39, 320);
+            this.panel4.Size = new System.Drawing.Size(31, 320);
             this.panel4.TabIndex = 4;
             // 
             // textBoxInfo
@@ -681,19 +738,6 @@
             this.buttonOkP4.UseVisualStyleBackColor = true;
             this.buttonOkP4.Click += new System.EventHandler(this.buttonOkP4_Click);
             // 
-            // comboBoxUserTypeP4
-            // 
-            this.comboBoxUserTypeP4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxUserTypeP4.FormattingEnabled = true;
-            this.comboBoxUserTypeP4.Items.AddRange(new object[] {
-            "Администратор",
-            "Заказчик",
-            "Работник"});
-            this.comboBoxUserTypeP4.Location = new System.Drawing.Point(448, 86);
-            this.comboBoxUserTypeP4.Name = "comboBoxUserTypeP4";
-            this.comboBoxUserTypeP4.Size = new System.Drawing.Size(255, 21);
-            this.comboBoxUserTypeP4.TabIndex = 39;
-            // 
             // textBoxPassP4
             // 
             this.textBoxPassP4.Location = new System.Drawing.Point(448, 59);
@@ -707,15 +751,6 @@
             this.textBoxLogP4.Name = "textBoxLogP4";
             this.textBoxLogP4.Size = new System.Drawing.Size(255, 20);
             this.textBoxLogP4.TabIndex = 36;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(380, 94);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(62, 13);
-            this.label14.TabIndex = 34;
-            this.label14.Text = "Тип польз.";
             // 
             // label15
             // 
@@ -823,9 +858,9 @@
             this.panel5.Controls.Add(this.buttonOkP5);
             this.panel5.Controls.Add(this.checkedListBoxEplP5);
             this.panel5.Controls.Add(this.label24);
-            this.panel5.Location = new System.Drawing.Point(225, 27);
+            this.panel5.Location = new System.Drawing.Point(141, 27);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(54, 320);
+            this.panel5.Size = new System.Drawing.Size(26, 320);
             this.panel5.TabIndex = 5;
             // 
             // comboBoxProjP5
@@ -894,9 +929,9 @@
             this.panel6.Controls.Add(this.label25);
             this.panel6.Controls.Add(this.buttonOkP6);
             this.panel6.Controls.Add(this.label26);
-            this.panel6.Location = new System.Drawing.Point(297, 27);
+            this.panel6.Location = new System.Drawing.Point(173, 27);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(45, 320);
+            this.panel6.Size = new System.Drawing.Size(28, 320);
             this.panel6.TabIndex = 6;
             // 
             // label27
@@ -980,9 +1015,9 @@
             this.panel7.Controls.Add(this.label29);
             this.panel7.Controls.Add(this.comboBoxCusP7);
             this.panel7.Controls.Add(this.label28);
-            this.panel7.Location = new System.Drawing.Point(359, 27);
+            this.panel7.Location = new System.Drawing.Point(210, 27);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(574, 320);
+            this.panel7.Size = new System.Drawing.Size(32, 320);
             this.panel7.TabIndex = 7;
             // 
             // buttonCancelP7
@@ -1041,11 +1076,594 @@
             this.label28.TabIndex = 0;
             this.label28.Text = "Заказчик";
             // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.panel_2_in_P8);
+            this.panel8.Controls.Add(this.panel1_in_P8);
+            this.panel8.Controls.Add(this.radioButtonEmplP8);
+            this.panel8.Controls.Add(this.radioButtonCustP8);
+            this.panel8.Controls.Add(this.buttonCancelP8);
+            this.panel8.Controls.Add(this.buttonOkP8);
+            this.panel8.Controls.Add(this.comboBoxUserP8);
+            this.panel8.Location = new System.Drawing.Point(248, 27);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(23, 320);
+            this.panel8.TabIndex = 8;
+            // 
+            // panel_2_in_P8
+            // 
+            this.panel_2_in_P8.Controls.Add(this.checkBox_send_P2_in_P8);
+            this.panel_2_in_P8.Controls.Add(this.textBox_Email_P2_in_P8);
+            this.panel_2_in_P8.Controls.Add(this.textBox_Phone_P2_in_P8);
+            this.panel_2_in_P8.Controls.Add(this.textBox_Pat_P2_in_P8);
+            this.panel_2_in_P8.Controls.Add(this.textBox_name_P2_in_P8);
+            this.panel_2_in_P8.Controls.Add(this.textBox_Sur_P2_in_P8);
+            this.panel_2_in_P8.Controls.Add(this.comboBox_role_P2_in_P8);
+            this.panel_2_in_P8.Controls.Add(this.textBox_type_P2_in_P8);
+            this.panel_2_in_P8.Controls.Add(this.textBox_pass_P2_in_P8);
+            this.panel_2_in_P8.Controls.Add(this.textBox_log_P2_in_P8);
+            this.panel_2_in_P8.Controls.Add(this.label40);
+            this.panel_2_in_P8.Controls.Add(this.label41);
+            this.panel_2_in_P8.Controls.Add(this.label42);
+            this.panel_2_in_P8.Controls.Add(this.label43);
+            this.panel_2_in_P8.Controls.Add(this.label44);
+            this.panel_2_in_P8.Controls.Add(this.label45);
+            this.panel_2_in_P8.Controls.Add(this.label46);
+            this.panel_2_in_P8.Controls.Add(this.label47);
+            this.panel_2_in_P8.Controls.Add(this.label48);
+            this.panel_2_in_P8.Location = new System.Drawing.Point(9, 53);
+            this.panel_2_in_P8.Name = "panel_2_in_P8";
+            this.panel_2_in_P8.Size = new System.Drawing.Size(888, 215);
+            this.panel_2_in_P8.TabIndex = 7;
+            // 
+            // checkBox_send_P2_in_P8
+            // 
+            this.checkBox_send_P2_in_P8.AutoSize = true;
+            this.checkBox_send_P2_in_P8.Location = new System.Drawing.Point(490, 145);
+            this.checkBox_send_P2_in_P8.Name = "checkBox_send_P2_in_P8";
+            this.checkBox_send_P2_in_P8.Size = new System.Drawing.Size(270, 17);
+            this.checkBox_send_P2_in_P8.TabIndex = 18;
+            this.checkBox_send_P2_in_P8.Text = "присылать на емейл сообщения об изменениях";
+            this.checkBox_send_P2_in_P8.UseVisualStyleBackColor = true;
+            // 
+            // textBox_Email_P2_in_P8
+            // 
+            this.textBox_Email_P2_in_P8.Location = new System.Drawing.Point(490, 110);
+            this.textBox_Email_P2_in_P8.Name = "textBox_Email_P2_in_P8";
+            this.textBox_Email_P2_in_P8.Size = new System.Drawing.Size(357, 20);
+            this.textBox_Email_P2_in_P8.TabIndex = 16;
+            // 
+            // textBox_Phone_P2_in_P8
+            // 
+            this.textBox_Phone_P2_in_P8.Location = new System.Drawing.Point(490, 79);
+            this.textBox_Phone_P2_in_P8.Name = "textBox_Phone_P2_in_P8";
+            this.textBox_Phone_P2_in_P8.Size = new System.Drawing.Size(357, 20);
+            this.textBox_Phone_P2_in_P8.TabIndex = 15;
+            // 
+            // textBox_Pat_P2_in_P8
+            // 
+            this.textBox_Pat_P2_in_P8.Location = new System.Drawing.Point(490, 14);
+            this.textBox_Pat_P2_in_P8.Name = "textBox_Pat_P2_in_P8";
+            this.textBox_Pat_P2_in_P8.Size = new System.Drawing.Size(357, 20);
+            this.textBox_Pat_P2_in_P8.TabIndex = 14;
+            // 
+            // textBox_name_P2_in_P8
+            // 
+            this.textBox_name_P2_in_P8.Location = new System.Drawing.Point(93, 144);
+            this.textBox_name_P2_in_P8.Name = "textBox_name_P2_in_P8";
+            this.textBox_name_P2_in_P8.Size = new System.Drawing.Size(302, 20);
+            this.textBox_name_P2_in_P8.TabIndex = 13;
+            // 
+            // textBox_Sur_P2_in_P8
+            // 
+            this.textBox_Sur_P2_in_P8.Location = new System.Drawing.Point(94, 112);
+            this.textBox_Sur_P2_in_P8.Name = "textBox_Sur_P2_in_P8";
+            this.textBox_Sur_P2_in_P8.Size = new System.Drawing.Size(301, 20);
+            this.textBox_Sur_P2_in_P8.TabIndex = 12;
+            // 
+            // comboBox_role_P2_in_P8
+            // 
+            this.comboBox_role_P2_in_P8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_role_P2_in_P8.FormattingEnabled = true;
+            this.comboBox_role_P2_in_P8.Location = new System.Drawing.Point(490, 47);
+            this.comboBox_role_P2_in_P8.Name = "comboBox_role_P2_in_P8";
+            this.comboBox_role_P2_in_P8.Size = new System.Drawing.Size(357, 21);
+            this.comboBox_role_P2_in_P8.TabIndex = 0;
+            // 
+            // textBox_type_P2_in_P8
+            // 
+            this.textBox_type_P2_in_P8.Location = new System.Drawing.Point(94, 80);
+            this.textBox_type_P2_in_P8.Name = "textBox_type_P2_in_P8";
+            this.textBox_type_P2_in_P8.ReadOnly = true;
+            this.textBox_type_P2_in_P8.Size = new System.Drawing.Size(301, 20);
+            this.textBox_type_P2_in_P8.TabIndex = 11;
+            // 
+            // textBox_pass_P2_in_P8
+            // 
+            this.textBox_pass_P2_in_P8.Location = new System.Drawing.Point(93, 48);
+            this.textBox_pass_P2_in_P8.Name = "textBox_pass_P2_in_P8";
+            this.textBox_pass_P2_in_P8.Size = new System.Drawing.Size(302, 20);
+            this.textBox_pass_P2_in_P8.TabIndex = 10;
+            // 
+            // textBox_log_P2_in_P8
+            // 
+            this.textBox_log_P2_in_P8.Location = new System.Drawing.Point(93, 15);
+            this.textBox_log_P2_in_P8.Name = "textBox_log_P2_in_P8";
+            this.textBox_log_P2_in_P8.ReadOnly = true;
+            this.textBox_log_P2_in_P8.Size = new System.Drawing.Size(302, 20);
+            this.textBox_log_P2_in_P8.TabIndex = 9;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(419, 51);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(65, 13);
+            this.label40.TabIndex = 8;
+            this.label40.Text = "Должность";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(419, 113);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(43, 13);
+            this.label41.TabIndex = 7;
+            this.label41.Text = "Е-мейл";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(419, 84);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(64, 13);
+            this.label42.TabIndex = 6;
+            this.label42.Text = "Тел. номер";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(419, 17);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(54, 13);
+            this.label43.TabIndex = 5;
+            this.label43.Text = "Отчество";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(19, 151);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(29, 13);
+            this.label44.TabIndex = 4;
+            this.label44.Text = "Имя";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(14, 119);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(56, 13);
+            this.label45.TabIndex = 3;
+            this.label45.Text = "Фамилия";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(14, 87);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(62, 13);
+            this.label46.TabIndex = 2;
+            this.label46.Text = "Тип польз.";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(14, 55);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(45, 13);
+            this.label47.TabIndex = 1;
+            this.label47.Text = "Пароль";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(14, 22);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(38, 13);
+            this.label48.TabIndex = 0;
+            this.label48.Text = "Логин";
+            // 
+            // panel1_in_P8
+            // 
+            this.panel1_in_P8.Controls.Add(this.textBox_info_P1_in_P8);
+            this.panel1_in_P8.Controls.Add(this.textBox_email_P1_in_P8);
+            this.panel1_in_P8.Controls.Add(this.textBox_phon_P1_in_P8);
+            this.panel1_in_P8.Controls.Add(this.textBox_Pat_P1_in_P8);
+            this.panel1_in_P8.Controls.Add(this.textBox_name_P1_in_P8);
+            this.panel1_in_P8.Controls.Add(this.textBox_Sur_P1_in_P8);
+            this.panel1_in_P8.Controls.Add(this.textBox_user_type_P1_in_P8);
+            this.panel1_in_P8.Controls.Add(this.textBox_pass_P1_in_P8);
+            this.panel1_in_P8.Controls.Add(this.textBox_log_P1_in_P8);
+            this.panel1_in_P8.Controls.Add(this.label39);
+            this.panel1_in_P8.Controls.Add(this.label38);
+            this.panel1_in_P8.Controls.Add(this.label37);
+            this.panel1_in_P8.Controls.Add(this.label36);
+            this.panel1_in_P8.Controls.Add(this.label35);
+            this.panel1_in_P8.Controls.Add(this.label34);
+            this.panel1_in_P8.Controls.Add(this.label31);
+            this.panel1_in_P8.Controls.Add(this.label30);
+            this.panel1_in_P8.Controls.Add(this.label14);
+            this.panel1_in_P8.Location = new System.Drawing.Point(9, 54);
+            this.panel1_in_P8.Name = "panel1_in_P8";
+            this.panel1_in_P8.Size = new System.Drawing.Size(866, 215);
+            this.panel1_in_P8.TabIndex = 6;
+            // 
+            // textBox_info_P1_in_P8
+            // 
+            this.textBox_info_P1_in_P8.Location = new System.Drawing.Point(490, 85);
+            this.textBox_info_P1_in_P8.Multiline = true;
+            this.textBox_info_P1_in_P8.Name = "textBox_info_P1_in_P8";
+            this.textBox_info_P1_in_P8.Size = new System.Drawing.Size(357, 120);
+            this.textBox_info_P1_in_P8.TabIndex = 17;
+            // 
+            // textBox_email_P1_in_P8
+            // 
+            this.textBox_email_P1_in_P8.Location = new System.Drawing.Point(490, 48);
+            this.textBox_email_P1_in_P8.Name = "textBox_email_P1_in_P8";
+            this.textBox_email_P1_in_P8.Size = new System.Drawing.Size(357, 20);
+            this.textBox_email_P1_in_P8.TabIndex = 16;
+            // 
+            // textBox_phon_P1_in_P8
+            // 
+            this.textBox_phon_P1_in_P8.Location = new System.Drawing.Point(490, 13);
+            this.textBox_phon_P1_in_P8.Name = "textBox_phon_P1_in_P8";
+            this.textBox_phon_P1_in_P8.Size = new System.Drawing.Size(357, 20);
+            this.textBox_phon_P1_in_P8.TabIndex = 15;
+            // 
+            // textBox_Pat_P1_in_P8
+            // 
+            this.textBox_Pat_P1_in_P8.Location = new System.Drawing.Point(93, 185);
+            this.textBox_Pat_P1_in_P8.Name = "textBox_Pat_P1_in_P8";
+            this.textBox_Pat_P1_in_P8.Size = new System.Drawing.Size(302, 20);
+            this.textBox_Pat_P1_in_P8.TabIndex = 14;
+            // 
+            // textBox_name_P1_in_P8
+            // 
+            this.textBox_name_P1_in_P8.Location = new System.Drawing.Point(93, 144);
+            this.textBox_name_P1_in_P8.Name = "textBox_name_P1_in_P8";
+            this.textBox_name_P1_in_P8.Size = new System.Drawing.Size(302, 20);
+            this.textBox_name_P1_in_P8.TabIndex = 13;
+            // 
+            // textBox_Sur_P1_in_P8
+            // 
+            this.textBox_Sur_P1_in_P8.Location = new System.Drawing.Point(94, 112);
+            this.textBox_Sur_P1_in_P8.Name = "textBox_Sur_P1_in_P8";
+            this.textBox_Sur_P1_in_P8.Size = new System.Drawing.Size(301, 20);
+            this.textBox_Sur_P1_in_P8.TabIndex = 12;
+            // 
+            // textBox_user_type_P1_in_P8
+            // 
+            this.textBox_user_type_P1_in_P8.Location = new System.Drawing.Point(94, 80);
+            this.textBox_user_type_P1_in_P8.Name = "textBox_user_type_P1_in_P8";
+            this.textBox_user_type_P1_in_P8.ReadOnly = true;
+            this.textBox_user_type_P1_in_P8.Size = new System.Drawing.Size(301, 20);
+            this.textBox_user_type_P1_in_P8.TabIndex = 11;
+            // 
+            // textBox_pass_P1_in_P8
+            // 
+            this.textBox_pass_P1_in_P8.Location = new System.Drawing.Point(93, 48);
+            this.textBox_pass_P1_in_P8.Name = "textBox_pass_P1_in_P8";
+            this.textBox_pass_P1_in_P8.Size = new System.Drawing.Size(302, 20);
+            this.textBox_pass_P1_in_P8.TabIndex = 10;
+            // 
+            // textBox_log_P1_in_P8
+            // 
+            this.textBox_log_P1_in_P8.Location = new System.Drawing.Point(93, 15);
+            this.textBox_log_P1_in_P8.Name = "textBox_log_P1_in_P8";
+            this.textBox_log_P1_in_P8.ReadOnly = true;
+            this.textBox_log_P1_in_P8.Size = new System.Drawing.Size(302, 20);
+            this.textBox_log_P1_in_P8.TabIndex = 9;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(419, 85);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(60, 13);
+            this.label39.TabIndex = 8;
+            this.label39.Text = "Доп. инфо";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(419, 51);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(43, 13);
+            this.label38.TabIndex = 7;
+            this.label38.Text = "Е-мейл";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(419, 20);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(64, 13);
+            this.label37.TabIndex = 6;
+            this.label37.Text = "Тел. номер";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(19, 190);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(54, 13);
+            this.label36.TabIndex = 5;
+            this.label36.Text = "Отчество";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(19, 151);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(29, 13);
+            this.label35.TabIndex = 4;
+            this.label35.Text = "Имя";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(14, 119);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(56, 13);
+            this.label34.TabIndex = 3;
+            this.label34.Text = "Фамилия";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(14, 87);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(62, 13);
+            this.label31.TabIndex = 2;
+            this.label31.Text = "Тип польз.";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(14, 55);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(45, 13);
+            this.label30.TabIndex = 1;
+            this.label30.Text = "Пароль";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(14, 22);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(38, 13);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Логин";
+            // 
+            // radioButtonEmplP8
+            // 
+            this.radioButtonEmplP8.AutoSize = true;
+            this.radioButtonEmplP8.Location = new System.Drawing.Point(143, 22);
+            this.radioButtonEmplP8.Name = "radioButtonEmplP8";
+            this.radioButtonEmplP8.Size = new System.Drawing.Size(79, 17);
+            this.radioButtonEmplP8.TabIndex = 5;
+            this.radioButtonEmplP8.Text = "Работники";
+            this.radioButtonEmplP8.UseVisualStyleBackColor = true;
+            this.radioButtonEmplP8.CheckedChanged += new System.EventHandler(this.radioButtonCustP8_CheckedChanged);
+            // 
+            // radioButtonCustP8
+            // 
+            this.radioButtonCustP8.AutoSize = true;
+            this.radioButtonCustP8.Checked = true;
+            this.radioButtonCustP8.Location = new System.Drawing.Point(29, 21);
+            this.radioButtonCustP8.Name = "radioButtonCustP8";
+            this.radioButtonCustP8.Size = new System.Drawing.Size(79, 17);
+            this.radioButtonCustP8.TabIndex = 4;
+            this.radioButtonCustP8.TabStop = true;
+            this.radioButtonCustP8.Text = "Заказчики";
+            this.radioButtonCustP8.UseVisualStyleBackColor = true;
+            this.radioButtonCustP8.CheckedChanged += new System.EventHandler(this.radioButtonCustP8_CheckedChanged);
+            // 
+            // buttonCancelP8
+            // 
+            this.buttonCancelP8.Location = new System.Drawing.Point(277, 282);
+            this.buttonCancelP8.Name = "buttonCancelP8";
+            this.buttonCancelP8.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancelP8.TabIndex = 3;
+            this.buttonCancelP8.Text = "Отмена";
+            this.buttonCancelP8.UseVisualStyleBackColor = true;
+            this.buttonCancelP8.Click += new System.EventHandler(this.buttonCancelP8_Click);
+            // 
+            // buttonOkP8
+            // 
+            this.buttonOkP8.Location = new System.Drawing.Point(88, 283);
+            this.buttonOkP8.Name = "buttonOkP8";
+            this.buttonOkP8.Size = new System.Drawing.Size(75, 23);
+            this.buttonOkP8.TabIndex = 2;
+            this.buttonOkP8.Text = "Ок";
+            this.buttonOkP8.UseVisualStyleBackColor = true;
+            this.buttonOkP8.Click += new System.EventHandler(this.buttonOkP8_Click);
+            // 
+            // comboBoxUserP8
+            // 
+            this.comboBoxUserP8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxUserP8.FormattingEnabled = true;
+            this.comboBoxUserP8.Location = new System.Drawing.Point(258, 21);
+            this.comboBoxUserP8.Name = "comboBoxUserP8";
+            this.comboBoxUserP8.Size = new System.Drawing.Size(321, 21);
+            this.comboBoxUserP8.TabIndex = 0;
+            this.comboBoxUserP8.SelectedIndexChanged += new System.EventHandler(this.comboBoxUserP8_SelectedIndexChanged);
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.buttonCancelP9);
+            this.panel9.Controls.Add(this.buttonOkP9);
+            this.panel9.Controls.Add(this.label33);
+            this.panel9.Controls.Add(this.listBoxProjP9);
+            this.panel9.Controls.Add(this.label32);
+            this.panel9.Controls.Add(this.comboBoxEmplP9);
+            this.panel9.Location = new System.Drawing.Point(276, 27);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(16, 320);
+            this.panel9.TabIndex = 9;
+            // 
+            // buttonCancelP9
+            // 
+            this.buttonCancelP9.Location = new System.Drawing.Point(329, 245);
+            this.buttonCancelP9.Name = "buttonCancelP9";
+            this.buttonCancelP9.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancelP9.TabIndex = 5;
+            this.buttonCancelP9.Text = "Отмена";
+            this.buttonCancelP9.UseVisualStyleBackColor = true;
+            this.buttonCancelP9.Click += new System.EventHandler(this.buttonCancelP9_Click);
+            // 
+            // buttonOkP9
+            // 
+            this.buttonOkP9.Location = new System.Drawing.Point(155, 244);
+            this.buttonOkP9.Name = "buttonOkP9";
+            this.buttonOkP9.Size = new System.Drawing.Size(75, 23);
+            this.buttonOkP9.TabIndex = 4;
+            this.buttonOkP9.Text = "Ок";
+            this.buttonOkP9.UseVisualStyleBackColor = true;
+            this.buttonOkP9.Click += new System.EventHandler(this.buttonOkP9_Click);
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(34, 59);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(52, 13);
+            this.label33.TabIndex = 3;
+            this.label33.Text = "Проекты";
+            // 
+            // listBoxProjP9
+            // 
+            this.listBoxProjP9.FormattingEnabled = true;
+            this.listBoxProjP9.Location = new System.Drawing.Point(133, 59);
+            this.listBoxProjP9.Name = "listBoxProjP9";
+            this.listBoxProjP9.Size = new System.Drawing.Size(302, 95);
+            this.listBoxProjP9.TabIndex = 2;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(35, 22);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(55, 13);
+            this.label32.TabIndex = 1;
+            this.label32.Text = "Работник";
+            // 
+            // comboBoxEmplP9
+            // 
+            this.comboBoxEmplP9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxEmplP9.FormattingEnabled = true;
+            this.comboBoxEmplP9.Location = new System.Drawing.Point(133, 15);
+            this.comboBoxEmplP9.Name = "comboBoxEmplP9";
+            this.comboBoxEmplP9.Size = new System.Drawing.Size(302, 21);
+            this.comboBoxEmplP9.TabIndex = 0;
+            this.comboBoxEmplP9.SelectedIndexChanged += new System.EventHandler(this.comboBoxEmplP9_SelectedIndexChanged);
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.comboBoxProjP10);
+            this.panel10.Controls.Add(this.label51);
+            this.panel10.Controls.Add(this.buttonCancelP10);
+            this.panel10.Controls.Add(this.buttonOkP10);
+            this.panel10.Controls.Add(this.textBoxDescrP10);
+            this.panel10.Controls.Add(this.label50);
+            this.panel10.Controls.Add(this.textBoxNameP10);
+            this.panel10.Controls.Add(this.label49);
+            this.panel10.Location = new System.Drawing.Point(299, 27);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(623, 320);
+            this.panel10.TabIndex = 10;
+            // 
+            // comboBoxProjP10
+            // 
+            this.comboBoxProjP10.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxProjP10.FormattingEnabled = true;
+            this.comboBoxProjP10.Location = new System.Drawing.Point(125, 35);
+            this.comboBoxProjP10.Name = "comboBoxProjP10";
+            this.comboBoxProjP10.Size = new System.Drawing.Size(340, 21);
+            this.comboBoxProjP10.TabIndex = 7;
+            this.comboBoxProjP10.SelectedIndexChanged += new System.EventHandler(this.comboBoxProjP10_SelectedIndexChanged);
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(9, 39);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(52, 13);
+            this.label51.TabIndex = 6;
+            this.label51.Text = "Проекты";
+            // 
+            // buttonCancelP10
+            // 
+            this.buttonCancelP10.Location = new System.Drawing.Point(403, 283);
+            this.buttonCancelP10.Name = "buttonCancelP10";
+            this.buttonCancelP10.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancelP10.TabIndex = 5;
+            this.buttonCancelP10.Text = "Отмена";
+            this.buttonCancelP10.UseVisualStyleBackColor = true;
+            this.buttonCancelP10.Click += new System.EventHandler(this.buttonCancelP10_Click);
+            // 
+            // buttonOkP10
+            // 
+            this.buttonOkP10.Location = new System.Drawing.Point(208, 283);
+            this.buttonOkP10.Name = "buttonOkP10";
+            this.buttonOkP10.Size = new System.Drawing.Size(75, 23);
+            this.buttonOkP10.TabIndex = 4;
+            this.buttonOkP10.Text = "Ок";
+            this.buttonOkP10.UseVisualStyleBackColor = true;
+            this.buttonOkP10.Click += new System.EventHandler(this.buttonOkP10_Click);
+            // 
+            // textBoxDescrP10
+            // 
+            this.textBoxDescrP10.Location = new System.Drawing.Point(480, 53);
+            this.textBoxDescrP10.Multiline = true;
+            this.textBoxDescrP10.Name = "textBoxDescrP10";
+            this.textBoxDescrP10.Size = new System.Drawing.Size(427, 204);
+            this.textBoxDescrP10.TabIndex = 3;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(477, 35);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(57, 13);
+            this.label50.TabIndex = 2;
+            this.label50.Text = "Описание";
+            // 
+            // textBoxNameP10
+            // 
+            this.textBoxNameP10.Location = new System.Drawing.Point(129, 159);
+            this.textBoxNameP10.Name = "textBoxNameP10";
+            this.textBoxNameP10.Size = new System.Drawing.Size(336, 20);
+            this.textBoxNameP10.TabIndex = 1;
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(10, 167);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(101, 13);
+            this.label49.TabIndex = 0;
+            this.label49.Text = "Название проекта";
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(945, 352);
+            this.Controls.Add(this.panel10);
+            this.Controls.Add(this.panel9);
+            this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
@@ -1073,6 +1691,16 @@
             this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel_2_in_P8.ResumeLayout(false);
+            this.panel_2_in_P8.PerformLayout();
+            this.panel1_in_P8.ResumeLayout(false);
+            this.panel1_in_P8.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1133,10 +1761,8 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button buttonCancelP4;
         private System.Windows.Forms.Button buttonOkP4;
-        private System.Windows.Forms.ComboBox comboBoxUserTypeP4;
         private System.Windows.Forms.TextBox textBoxPassP4;
         private System.Windows.Forms.TextBox textBoxLogP4;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox textBoxEmailP4;
@@ -1177,6 +1803,67 @@
         private System.Windows.Forms.ListBox listBoxProjP7;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.ComboBox comboBoxCusP7;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Button buttonCancelP8;
+        private System.Windows.Forms.Button buttonOkP8;
+        private System.Windows.Forms.ComboBox comboBoxUserP8;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.ComboBox comboBoxEmplP9;
+        private System.Windows.Forms.Button buttonCancelP9;
+        private System.Windows.Forms.Button buttonOkP9;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.ListBox listBoxProjP9;
+        private System.Windows.Forms.RadioButton radioButtonEmplP8;
+        private System.Windows.Forms.RadioButton radioButtonCustP8;
+        private System.Windows.Forms.Panel panel1_in_P8;
+        private System.Windows.Forms.TextBox textBox_info_P1_in_P8;
+        private System.Windows.Forms.TextBox textBox_email_P1_in_P8;
+        private System.Windows.Forms.TextBox textBox_phon_P1_in_P8;
+        private System.Windows.Forms.TextBox textBox_Pat_P1_in_P8;
+        private System.Windows.Forms.TextBox textBox_name_P1_in_P8;
+        private System.Windows.Forms.TextBox textBox_Sur_P1_in_P8;
+        private System.Windows.Forms.TextBox textBox_user_type_P1_in_P8;
+        private System.Windows.Forms.TextBox textBox_pass_P1_in_P8;
+        private System.Windows.Forms.TextBox textBox_log_P1_in_P8;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Panel panel_2_in_P8;
+        private System.Windows.Forms.CheckBox checkBox_send_P2_in_P8;
+        private System.Windows.Forms.TextBox textBox_Email_P2_in_P8;
+        private System.Windows.Forms.TextBox textBox_Phone_P2_in_P8;
+        private System.Windows.Forms.TextBox textBox_Pat_P2_in_P8;
+        private System.Windows.Forms.TextBox textBox_name_P2_in_P8;
+        private System.Windows.Forms.TextBox textBox_Sur_P2_in_P8;
+        private System.Windows.Forms.TextBox textBox_type_P2_in_P8;
+        private System.Windows.Forms.TextBox textBox_pass_P2_in_P8;
+        private System.Windows.Forms.TextBox textBox_log_P2_in_P8;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Button buttonCancelP10;
+        private System.Windows.Forms.Button buttonOkP10;
+        private System.Windows.Forms.TextBox textBoxDescrP10;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.TextBox textBoxNameP10;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.ComboBox comboBoxProjP10;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.ComboBox comboBox_role_P2_in_P8;
 
     }
 }
