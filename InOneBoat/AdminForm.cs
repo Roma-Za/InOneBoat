@@ -21,11 +21,14 @@ namespace InOneBoat
         private List<string> prof = new List<string>() { "PM", "QA", "Dev", "Admin" };
         private Customer TempCust;
         private Employee TempEmp;
+        private Employee I_am_Emp;
         private String tempTxt = "";
-        public AdminForm()
+        public AdminForm(string login, string pass)
         {
             InitializeComponent();
             HideAllPanel();
+            I_am_Emp = new Employee(connect, login, pass);
+            this.Text = String.Format("{0} {1}, {2}", I_am_Emp.Name, I_am_Emp.Surname, I_am_Emp.Role);
         }
 
 

@@ -9,6 +9,8 @@ namespace InOneBoat
     {
         private string connect = ConfigurationManager.ConnectionStrings["dbProject"].ConnectionString;
         private string ValidMessage = "";
+        private string login = "";
+        private string password = "";
         public Form_authorization()
         {
             InitializeComponent();           
@@ -23,8 +25,8 @@ namespace InOneBoat
         {
             
             string commandText = "SELECT user_types.name FROM users INNER JOIN user_types ON users.user_type_id = user_types.id WHERE (((users.user_name) = @login) AND ((users.password) = @pass))";
-            string login = textBoxLog.Text;
-            string password = maskedTextBoxPass.Text;
+            login = textBoxLog.Text;
+            password = maskedTextBoxPass.Text;
             if (ValidOk(login) && ValidOk(password))
             {
                 string type = "";
@@ -57,7 +59,7 @@ namespace InOneBoat
                         {
                             case "admin":
                                 {
-                                    AdminForm adm = new AdminForm();
+                                    AdminForm adm = new AdminForm(login, password);
                                     this.Visible = false;
                                     adm.ShowDialog();
                                     clearAuthorization();
@@ -65,7 +67,7 @@ namespace InOneBoat
                                 } break;
                             case "customer":
                                 {
-                                    CustomerForm cust = new CustomerForm();
+                                    CustomerForm cust = new CustomerForm(login, password);
                                     this.Visible = false;
                                     cust.ShowDialog();
                                     clearAuthorization();
@@ -73,7 +75,7 @@ namespace InOneBoat
                                 } break;
                             case "employee":
                                 {
-                                    EmployeeForm empl = new EmployeeForm();
+                                    EmployeeForm empl = new EmployeeForm(login, password);
                                     this.Visible = false;
                                     empl.ShowDialog();
                                     clearAuthorization();

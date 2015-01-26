@@ -12,7 +12,7 @@ namespace InOneBoat
 {
     public partial class CustomerForm : Form
     {
-        public CustomerForm()
+        public CustomerForm(string login, string pass)
         {
             InitializeComponent();
         }

@@ -22,7 +22,22 @@ namespace InOneBoat
         public bool Send { set; get; }
 
         public string ConnString { set; get; }
+        public Employee(string connect, string login, string pass)
+        { 
+             ConnString = connect;
 
+            string commandText = "SELECT * FROM Employee WHERE user_name = @user AND password = @pass";
+
+            using (SqlConnection sql_connect = new SqlConnection(connect))
+            {
+                sql_connect.Open();
+                SqlCommand cmd = sql_connect.CreateCommand();
+                cmd.CommandText = commandText;
+                cmd.Parameters.AddWithValue("@user", login);
+                cmd.Parameters.AddWithValue("@pass", pass);
+                fillAllFields(cmd);
+            }
+        }
         public Employee(string connect, int Id)
         {
             ConnString = connect;
@@ -35,113 +50,118 @@ namespace InOneBoat
                 SqlCommand cmd = sql_connect.CreateCommand();
                 cmd.CommandText = commandText;
                 cmd.Parameters.AddWithValue("@ID", Id);
+                fillAllFields(cmd);
+            }
+        }
 
-                SqlDataReader rdr = cmd.ExecuteReader();
-                while (rdr.Read())
+        private void fillAllFields(SqlCommand cmd)
+        {
+
+            SqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                #region присвоение
+                try
                 {
-                    #region присвоение
-                    try
-                    {
-                        ID = rdr.GetInt32(0);
-                    }
-                    catch (Exception)
-                    {
-
-                        ID = 0;
-                    }
-                    try
-                    {
-                        Login = rdr.GetString(1);
-                    }
-                    catch (Exception)
-                    {
-
-                        Login = "";
-                    }
-                    try
-                    {
-                        Password = rdr.GetString(2);
-                    }
-                    catch (Exception)
-                    {
-
-                        Password = "";
-                    }
-                    try
-                    {
-                        UserType = rdr.GetString(3);
-                    }
-                    catch (Exception)
-                    {
-                        UserType = "";
-
-                    }
-                    try
-                    {
-                        Surname = rdr.GetString(4);
-                    }
-                    catch (Exception)
-                    {
-                        Surname = "";
-
-                    }
-                    try
-                    {
-                        Name = rdr.GetString(5);
-                    }
-                    catch (Exception)
-                    {
-                        Name = "";
-
-                    }
-                    try
-                    {
-                        Patronymic = rdr.GetString(6);
-                    }
-                    catch (Exception)
-                    {
-
-                        Patronymic = "";
-                    }
-                    try
-                    {
-                        Phone_number = rdr.GetString(7);
-                    }
-                    catch (Exception)
-                    {
-                        Phone_number = "";
-
-                    }
-                    try
-                    {
-                        Email = rdr.GetString(8);
-                    }
-                    catch (Exception)
-                    {
-                        Email = "";
-
-                    }
-                    try
-                    {
-                        Role = rdr.GetString(9);
-                    }
-                    catch (Exception)
-                    {
-                        Role = "";
-
-                    }
-                    try
-                    {
-                        Send = (bool)rdr.GetSqlBoolean(10);
-                        
-                    }
-                    catch (Exception)
-                    {
-                        Send = false;
-
-                    }
-                    #endregion
+                    ID = rdr.GetInt32(0);
                 }
+                catch (Exception)
+                {
+
+                    ID = 0;
+                }
+                try
+                {
+                    Login = rdr.GetString(1);
+                }
+                catch (Exception)
+                {
+
+                    Login = "";
+                }
+                try
+                {
+                    Password = rdr.GetString(2);
+                }
+                catch (Exception)
+                {
+
+                    Password = "";
+                }
+                try
+                {
+                    UserType = rdr.GetString(3);
+                }
+                catch (Exception)
+                {
+                    UserType = "";
+
+                }
+                try
+                {
+                    Surname = rdr.GetString(4);
+                }
+                catch (Exception)
+                {
+                    Surname = "";
+
+                }
+                try
+                {
+                    Name = rdr.GetString(5);
+                }
+                catch (Exception)
+                {
+                    Name = "";
+
+                }
+                try
+                {
+                    Patronymic = rdr.GetString(6);
+                }
+                catch (Exception)
+                {
+
+                    Patronymic = "";
+                }
+                try
+                {
+                    Phone_number = rdr.GetString(7);
+                }
+                catch (Exception)
+                {
+                    Phone_number = "";
+
+                }
+                try
+                {
+                    Email = rdr.GetString(8);
+                }
+                catch (Exception)
+                {
+                    Email = "";
+
+                }
+                try
+                {
+                    Role = rdr.GetString(9);
+                }
+                catch (Exception)
+                {
+                    Role = "";
+
+                }
+                try
+                {
+                    Send = (bool)rdr.GetSqlBoolean(10);
+
+                }
+                catch (Exception)
+                {
+                    Send = false;
+
+                }
+                #endregion
             }
         }
         public string GetSNP()
