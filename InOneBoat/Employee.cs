@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace InOneBoat
 {
-    class Employee
+   public class Employee
     {
         public int ID { set; get; }
         public string Login { set; get; }
@@ -164,10 +164,12 @@ namespace InOneBoat
                 #endregion
             }
         }
+       
         public string GetSNP()
         {
             return String.Format("{0} {1} {2}", Surname, Name, Patronymic);
         }
+
         public void SetAll(string login, string pass, string type, string sur, string name, string pat, string phone, string em, string role, bool send) 
         {
             if (login != Login) 
@@ -182,9 +184,10 @@ namespace InOneBoat
                     cmd.Parameters.AddWithValue("@ID", ID);
                     cmd.ExecuteNonQuery();
                 }
+                Login = login;
             }
 
-            if (pass != Password)
+            if (pass != Password && pass != "")
             {
                 string comm = "UPDATE Employee SET password = @pass WHERE id = @ID";
                 using (SqlConnection sql_connect = new SqlConnection(ConnString))
@@ -196,6 +199,7 @@ namespace InOneBoat
                     cmd.Parameters.AddWithValue("@ID", ID);
                     cmd.ExecuteNonQuery();
                 }
+                Password = pass;
             }
 
             if (type != UserType)
@@ -210,6 +214,7 @@ namespace InOneBoat
                     cmd.Parameters.AddWithValue("@ID", ID);
                     cmd.ExecuteNonQuery();
                 }
+                UserType = type;
             }
 
             if (sur != Surname)
@@ -224,6 +229,7 @@ namespace InOneBoat
                     cmd.Parameters.AddWithValue("@ID", ID);
                     cmd.ExecuteNonQuery();
                 }
+                Surname = sur;
             }
 
             if (name != Name)
@@ -238,6 +244,7 @@ namespace InOneBoat
                     cmd.Parameters.AddWithValue("@ID", ID);
                     cmd.ExecuteNonQuery();
                 }
+                Name = name;
             }
 
             if (pat != Patronymic)
@@ -252,6 +259,7 @@ namespace InOneBoat
                     cmd.Parameters.AddWithValue("@ID", ID);
                     cmd.ExecuteNonQuery();
                 }
+                Patronymic = pat;
             }
 
             if (phone != Phone_number)
@@ -266,6 +274,7 @@ namespace InOneBoat
                     cmd.Parameters.AddWithValue("@ID", ID);
                     cmd.ExecuteNonQuery();
                 }
+                Phone_number = phone;
             }
 
             if (em != Email)
@@ -280,6 +289,7 @@ namespace InOneBoat
                     cmd.Parameters.AddWithValue("@ID", ID);
                     cmd.ExecuteNonQuery();
                 }
+                Email = em;
             }
 
             if (role != Role)
@@ -294,6 +304,7 @@ namespace InOneBoat
                     cmd.Parameters.AddWithValue("@ID", ID);
                     cmd.ExecuteNonQuery();
                 }
+                Role = role;
             }
 
             if (send != Send)
@@ -309,6 +320,7 @@ namespace InOneBoat
                     cmd.Parameters.AddWithValue("@ID", ID);
                     cmd.ExecuteNonQuery();
                 }
+                Send = send;
             }
         }
     }

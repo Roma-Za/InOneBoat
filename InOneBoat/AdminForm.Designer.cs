@@ -929,7 +929,7 @@
             this.panel6.Controls.Add(this.label25);
             this.panel6.Controls.Add(this.buttonOkP6);
             this.panel6.Controls.Add(this.label26);
-            this.panel6.Location = new System.Drawing.Point(173, 27);
+            this.panel6.Location = new System.Drawing.Point(771, 27);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(28, 320);
             this.panel6.TabIndex = 6;
@@ -1015,9 +1015,9 @@
             this.panel7.Controls.Add(this.label29);
             this.panel7.Controls.Add(this.comboBoxCusP7);
             this.panel7.Controls.Add(this.label28);
-            this.panel7.Location = new System.Drawing.Point(210, 27);
+            this.panel7.Location = new System.Drawing.Point(805, 27);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(32, 320);
+            this.panel7.Size = new System.Drawing.Size(20, 320);
             this.panel7.TabIndex = 7;
             // 
             // buttonCancelP7
@@ -1085,9 +1085,9 @@
             this.panel8.Controls.Add(this.buttonCancelP8);
             this.panel8.Controls.Add(this.buttonOkP8);
             this.panel8.Controls.Add(this.comboBoxUserP8);
-            this.panel8.Location = new System.Drawing.Point(248, 27);
+            this.panel8.Location = new System.Drawing.Point(831, 27);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(23, 320);
+            this.panel8.Size = new System.Drawing.Size(34, 320);
             this.panel8.TabIndex = 8;
             // 
             // panel_2_in_P8
@@ -1508,9 +1508,9 @@
             this.panel9.Controls.Add(this.listBoxProjP9);
             this.panel9.Controls.Add(this.label32);
             this.panel9.Controls.Add(this.comboBoxEmplP9);
-            this.panel9.Location = new System.Drawing.Point(276, 27);
+            this.panel9.Location = new System.Drawing.Point(871, 27);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(16, 320);
+            this.panel9.Size = new System.Drawing.Size(21, 320);
             this.panel9.TabIndex = 9;
             // 
             // buttonCancelP9
@@ -1579,9 +1579,9 @@
             this.panel10.Controls.Add(this.label50);
             this.panel10.Controls.Add(this.textBoxNameP10);
             this.panel10.Controls.Add(this.label49);
-            this.panel10.Location = new System.Drawing.Point(299, 27);
+            this.panel10.Location = new System.Drawing.Point(898, 27);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(623, 320);
+            this.panel10.Size = new System.Drawing.Size(24, 320);
             this.panel10.TabIndex = 10;
             // 
             // comboBoxProjP10

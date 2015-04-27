@@ -40,10 +40,8 @@ namespace InOneBoat
                 try
                 {
                     if (item is ComboBox) ((ComboBox)item).Items.Clear();
-                }
-                catch (Exception e)
-                {
-                }
+                }catch{}
+
                 if (item is CheckBox) ((CheckBox)item).Checked = false;
                 if (item is RichTextBox) ((RichTextBox)item).Text = "";
                 if (item is CheckedListBox) ((CheckedListBox)item).Items.Clear();
