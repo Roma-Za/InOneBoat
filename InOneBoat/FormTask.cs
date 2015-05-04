@@ -326,7 +326,7 @@ namespace InOneBoat
                     if (!DicEmp.TryGetValue(item.ToString(), out emplId)) MessageBox.Show("ошибка поиска значения по ключу emplId");
                     chItems.Add(emplId);
                 }
-
+                if (I_am_Emp.Role == "PM") chItems.Add(I_am_Emp.ID);
                 task.SetAll(parent_id, textBox_P_New_Task_Descrip.Text, est, st, pr_id, pr, textBox_P_New_Task_Summ.Text, chItems);
                 this.Close();
             }
@@ -378,16 +378,7 @@ namespace InOneBoat
 
         private void listBox_Attach_List_DoubleClick(object sender, EventArgs e)
         {
-            /*
-            try
-            {
-                FileStream fs = new FileStream(((ListBox)sender).SelectedItem.ToString(), FileMode.Open, FileAccess.Read);
-            }
-            catch (Exception)
-            {
-               
-            }
-            */
+  
         }
 
         private void логированиеВремениToolStripMenuItem_Click(object sender, EventArgs e)

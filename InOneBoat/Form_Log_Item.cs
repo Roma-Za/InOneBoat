@@ -149,6 +149,7 @@ namespace InOneBoat
             if (flag && dec > 0)
             {
                 new LogItem(connect, task.ID, dtSt, dtFin, I_am_Emp.ID);
+                if (!(task.getStatusRu() == "в процессе" || task.getStatusRu() == "переоткрыта")) MessageBox.Show("Статус задачи: " + task.getStatusRu() + ", измените статус на более актуальный.");
                 this.Close();
             }
             else MessageBox.Show("Время накладывается на другие задачи.");

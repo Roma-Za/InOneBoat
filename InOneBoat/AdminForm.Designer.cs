@@ -929,9 +929,9 @@
             this.panel6.Controls.Add(this.label25);
             this.panel6.Controls.Add(this.buttonOkP6);
             this.panel6.Controls.Add(this.label26);
-            this.panel6.Location = new System.Drawing.Point(771, 27);
+            this.panel6.Location = new System.Drawing.Point(182, 27);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(28, 320);
+            this.panel6.Size = new System.Drawing.Size(617, 320);
             this.panel6.TabIndex = 6;
             // 
             // label27

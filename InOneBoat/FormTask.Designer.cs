@@ -141,7 +141,7 @@
             this.panel_Task.Controls.Add(this.textBoxDescription);
             this.panel_Task.Location = new System.Drawing.Point(12, 27);
             this.panel_Task.Name = "panel_Task";
-            this.panel_Task.Size = new System.Drawing.Size(32, 402);
+            this.panel_Task.Size = new System.Drawing.Size(10, 402);
             this.panel_Task.TabIndex = 2;
             this.panel_Task.Visible = false;
             // 
@@ -193,7 +193,7 @@
             this.richTextBoxComments.Location = new System.Drawing.Point(6, 200);
             this.richTextBoxComments.Name = "richTextBoxComments";
             this.richTextBoxComments.ReadOnly = true;
-            this.richTextBoxComments.Size = new System.Drawing.Size(20, 170);
+            this.richTextBoxComments.Size = new System.Drawing.Size(0, 170);
             this.richTextBoxComments.TabIndex = 8;
             this.richTextBoxComments.Text = "";
             // 
@@ -201,7 +201,7 @@
             // 
             this.label_P_Task_prior.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label_P_Task_prior.AutoSize = true;
-            this.label_P_Task_prior.Location = new System.Drawing.Point(-201, 39);
+            this.label_P_Task_prior.Location = new System.Drawing.Point(-223, 39);
             this.label_P_Task_prior.Name = "label_P_Task_prior";
             this.label_P_Task_prior.Size = new System.Drawing.Size(64, 13);
             this.label_P_Task_prior.TabIndex = 7;
@@ -211,7 +211,7 @@
             // 
             this.label_P_Task_status.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label_P_Task_status.AutoSize = true;
-            this.label_P_Task_status.Location = new System.Drawing.Point(-201, 15);
+            this.label_P_Task_status.Location = new System.Drawing.Point(-223, 15);
             this.label_P_Task_status.Name = "label_P_Task_status";
             this.label_P_Task_status.Size = new System.Drawing.Size(82, 13);
             this.label_P_Task_status.TabIndex = 6;
@@ -220,7 +220,7 @@
             // button_watch
             // 
             this.button_watch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_watch.Location = new System.Drawing.Point(-74, 376);
+            this.button_watch.Location = new System.Drawing.Point(-96, 376);
             this.button_watch.Name = "button_watch";
             this.button_watch.Size = new System.Drawing.Size(103, 23);
             this.button_watch.TabIndex = 5;
@@ -282,9 +282,9 @@
             this.panel_New_Task.Controls.Add(this.label4);
             this.panel_New_Task.Controls.Add(this.textBox_P_New_Task_Summ);
             this.panel_New_Task.Controls.Add(this.label3);
-            this.panel_New_Task.Location = new System.Drawing.Point(66, 27);
+            this.panel_New_Task.Location = new System.Drawing.Point(28, 27);
             this.panel_New_Task.Name = "panel_New_Task";
-            this.panel_New_Task.Size = new System.Drawing.Size(780, 402);
+            this.panel_New_Task.Size = new System.Drawing.Size(850, 402);
             this.panel_New_Task.TabIndex = 3;
             this.panel_New_Task.Visible = false;
             // 
@@ -437,9 +437,9 @@
             this.panel_Edit_Task.Controls.Add(this.label13);
             this.panel_Edit_Task.Controls.Add(this.textBox_P_Edit_Summ);
             this.panel_Edit_Task.Controls.Add(this.label14);
-            this.panel_Edit_Task.Location = new System.Drawing.Point(865, 24);
+            this.panel_Edit_Task.Location = new System.Drawing.Point(884, 24);
             this.panel_Edit_Task.Name = "panel_Edit_Task";
-            this.panel_Edit_Task.Size = new System.Drawing.Size(34, 402);
+            this.panel_Edit_Task.Size = new System.Drawing.Size(15, 402);
             this.panel_Edit_Task.TabIndex = 5;
             this.panel_Edit_Task.Visible = false;
             // 
