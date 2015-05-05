@@ -15,6 +15,7 @@ namespace InOneBoat
     public partial class EmployeeForm : Form
     {
         private Dictionary<String, int> DicProj;
+        private Dictionary<String, int> DicEmp;
         private string connect = ConfigurationManager.ConnectionStrings["dbProject"].ConnectionString;
         protected Employee I_am_Emp;
         private List<string> prof = new List<string>() { "PM", "QA", "Dev", "Admin" };
@@ -36,20 +37,8 @@ namespace InOneBoat
         {
             InitializeComponent();
             HideAllPanel();
-            I_am_Emp = new Employee(connect, login, pass);
-            
-   
-            if (I_am_Emp.Role != "" && I_am_Emp.Role == "PM")
-            {
-                FormPM pm = new FormPM(I_am_Emp);
-                this.Visible = false;
-                pm.ShowDialog();
-                this.Visible = true;
-                this.Close();
-            }
-            else 
-            { 
-                this.Text = String.Format("{0} {1}, {2}", I_am_Emp.Name, I_am_Emp.Surname, I_am_Emp.Role);
+            I_am_Emp = new Employee(connect, login, pass);    
+            this.Text = String.Format("{0} {1}, {2}", I_am_Emp.Name, I_am_Emp.Surname, I_am_Emp.Role);
             panelProj.Visible = true;
             panelProj.Dock = DockStyle.Fill;
             fillProj();
@@ -60,9 +49,14 @@ namespace InOneBoat
             Friday = new Label[] { label_5_8, label_5_9, label_5_10, label_5_11, label_5_12, label_5_13, label_5_14, label_5_15, label_5_16, label_5_17, label_5_18, label_5_19, label_5_20 };
             Saturday = new Label[] { label_6_8, label_6_9, label_6_10, label_6_11, label_6_12, label_6_13, label_6_14, label_6_15, label_6_16, label_6_17, label_6_18, label_6_19, label_6_20 };
             Sunday = new Label[] { label_7_8, label_7_9, label_7_10, label_7_11, label_7_12, label_7_13, label_7_14, label_7_15, label_7_16, label_7_17, label_7_18, label_7_19, label_7_20 };
-
-            }
-
+           ToolStripItem [] tsi = menuStrip1.Items.Find("статистикаСотрудниковToolStripMenuItem", true);
+           if (I_am_Emp.Role != "PM")
+           {
+               foreach (ToolStripItem item in tsi)
+               {
+                   item.Visible = false;
+               }
+           }
         }
         private static void ClearAll(Control.ControlCollection c)
         {
@@ -75,7 +69,6 @@ namespace InOneBoat
                     if (item is ComboBox) ((ComboBox)item).Items.Clear();
                 }
                 catch { }
-
                 if (item is CheckBox) ((CheckBox)item).Checked = false;
                 if (item is RichTextBox) ((RichTextBox)item).Text = "";
                 if (item is CheckedListBox) ((CheckedListBox)item).Items.Clear();
@@ -233,7 +226,13 @@ namespace InOneBoat
             ClearAll(c);
             panelStat.Visible = true;
             panelStat.Dock = DockStyle.Fill;
-            //menuStrip1.Enabled = false;
+            clearGraf(Friday);
+            clearGraf(Monday);
+            clearGraf(Saturday);
+            clearGraf(Sunday);
+            clearGraf(Thursday);
+            clearGraf(Tuesday);
+            clearGraf(Wednesday);
 
             #region вывод всех проектов
             string commandText = "SELECT p.project_name FROM projects AS p INNER JOIN projects_employees AS pe ON p.id = pe.project_id  WHERE pe.employee_id = @empl";
@@ -253,10 +252,7 @@ namespace InOneBoat
 
             }
             #endregion
-            panelStat.Visible = true;
-            panelStat.Dock = DockStyle.Fill;
-            // menuStrip1.Enabled = false;
-
+           
         }
 
         private void fillLogItems()
@@ -319,6 +315,13 @@ namespace InOneBoat
 
             }
             #endregion
+            logItemList.Sort(delegate(LogItem x, LogItem y) 
+            {
+                if (x.Start_time == null && y.Start_time == null) return 0;
+                else if (x.Start_time == null) return -1;
+                else if (y.Start_time == null) return 1;
+                else return x.Start_time.Date.CompareTo(y.Start_time.Date);
+            });
         }
 
         private void fillListBoxLegend()
@@ -356,8 +359,9 @@ namespace InOneBoat
                 default:
                     break;
             }
-
-            dateMon = date.AddDays(0 - dOfW);
+            DateTime dt = date.AddDays(0 - dOfW);
+            dateMon = new DateTime(dt.Year, dt.Month, dt.Day);
+            
             for (int i = 0; i < 7; i++)
             {
                 foreach (var item in logItemList)
@@ -378,14 +382,16 @@ namespace InOneBoat
                             rdr.Read();
                             s += rdr.GetString(0);
                         }
-
-                        listBox_legend.Items.Add(s);
-                        listTaskSumm.Add(item.Task_id);
+                        if (!listTaskSumm.Contains(item.Task_id))
+                        {
+                            listBox_legend.Items.Add(s);
+                            listTaskSumm.Add(item.Task_id);
+                        }
                     }
                 }
 
             }
-            #endregion
+            #endregion       
         }
 
         private void listBox_legend_DrawItem(object sender, DrawItemEventArgs e)
@@ -777,6 +783,156 @@ namespace InOneBoat
             }
             this.Visible = true;
             fillListBoxes();
+        }
+        #endregion
+        #region Статистика сотрудников
+        private void статистикаСотрудниковToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HideAllPanel();
+            Control.ControlCollection c = panel_more_empl.Controls;
+            ClearAll(c);
+            panel_more_empl.Visible = true;
+            panel_more_empl.Dock = DockStyle.Fill;
+
+            #region вывод всех проектов
+            string commandText = "SELECT p.project_name FROM projects AS p INNER JOIN projects_employees AS pe ON p.id = pe.project_id  WHERE pe.employee_id = @empl";
+
+            using (SqlConnection sql_connect = new SqlConnection(connect))
+            {
+                sql_connect.Open();
+                SqlCommand cmd = sql_connect.CreateCommand();
+                cmd.CommandText = commandText;
+
+                cmd.Parameters.AddWithValue("@empl", I_am_Emp.ID);
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    comboBox_Proj.Items.Add(rdr.GetString(0));
+                }
+            }
+            #endregion
+        }
+
+        private void comboBox_Proj_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            comboBox_Empl.Items.Clear();
+            #region все работники которые уже добавленны в выбранный проект
+            string commandText = "SELECT employee_id FROM projects_employees WHERE project_id = @proj";
+            List<int> arrIdEmpol = new List<int>();
+            using (SqlConnection sql_connect = new SqlConnection(connect))
+            {
+                sql_connect.Open();
+                SqlCommand cmd = sql_connect.CreateCommand();
+                cmd.CommandText = commandText;
+
+                int value = 0;
+                if (!DicProj.TryGetValue(comboBox_Proj.Text, out value)) MessageBox.Show("ошибка поиска значения по ключу");
+                cmd.Parameters.AddWithValue("@proj", value);
+                SqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+
+                    int idEmp = 0;
+
+                    try
+                    {
+                        idEmp = rdr.GetInt32(0);
+                    }
+                    catch (Exception)
+                    {
+                        idEmp = 0;
+                    }
+
+                    arrIdEmpol.Add(idEmp);
+                }
+
+            }
+
+            DicEmp = new Dictionary<string, int>();
+            string commandT = "SELECT * FROM View_enployee";
+            using (SqlConnection sql_connect = new SqlConnection(connect))
+            {
+                sql_connect.Open();
+                SqlCommand cmd = sql_connect.CreateCommand();
+                cmd.CommandText = commandT;
+
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    #region присвоение
+                    int Id = 0;
+                    String strEmp = "";
+
+                    try
+                    {
+                        Id = rdr.GetInt32(0);
+
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("ошибка конвертации " + Id);
+                    }
+                    try
+                    {
+                        strEmp += rdr.GetString(1);
+                        strEmp += " ";
+                    }
+                    catch (Exception)
+                    {
+
+                        strEmp += " ";
+                    }
+                    try
+                    {
+                        strEmp += rdr.GetString(2);
+                        strEmp += " ";
+                    }
+                    catch (Exception)
+                    {
+                        strEmp += " ";
+
+                    }
+                    try
+                    {
+                        strEmp += rdr.GetString(3);
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+
+                    DicEmp.Add(strEmp, Id);
+                    #endregion
+                }
+
+                foreach (var item in DicEmp)
+                {
+                    if (arrIdEmpol.Contains(item.Value))
+                    {
+                        comboBox_Empl.Items.Add(item.Key);
+                    }
+                }
+
+            }
+            #endregion
+        
+        }
+
+        private void button_show_stat_Click(object sender, EventArgs e)
+        {
+            if (comboBox_Empl.Text != "")
+            {
+                int emplID = 0;
+                if (!DicEmp.TryGetValue(comboBox_Empl.Text, out emplID)) MessageBox.Show("ошибка поиска значения по ключу");
+                int prID = 0;
+                if (!DicProj.TryGetValue(comboBox_Proj.Text, out prID)) MessageBox.Show("ошибка поиска значения по ключу");
+                FormMoreStat pm = new FormMoreStat(emplID, prID);
+                this.Visible = false;
+                pm.ShowDialog();
+                this.Visible = true;
+            }
         }
         #endregion
     }

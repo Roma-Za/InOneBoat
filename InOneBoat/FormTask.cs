@@ -205,8 +205,11 @@ namespace InOneBoat
                     }
                     if (role == "Dev" || role == "QA")
                     {
-                        DicEmp.Add(empl, id);
-                        checkedListBox_P_New_Task_Partic.Items.Add(empl, false);
+                        if (id != I_am_Emp.ID)
+                        {
+                            DicEmp.Add(empl, id);
+                            checkedListBox_P_New_Task_Partic.Items.Add(empl, false);
+                        }
                     }
                 }
 
@@ -326,7 +329,7 @@ namespace InOneBoat
                     if (!DicEmp.TryGetValue(item.ToString(), out emplId)) MessageBox.Show("ошибка поиска значения по ключу emplId");
                     chItems.Add(emplId);
                 }
-                if (I_am_Emp.Role == "PM") chItems.Add(I_am_Emp.ID);
+                if (!chItems.Contains(I_am_Emp.ID)) chItems.Add(I_am_Emp.ID);
                 task.SetAll(parent_id, textBox_P_New_Task_Descrip.Text, est, st, pr_id, pr, textBox_P_New_Task_Summ.Text, chItems);
                 this.Close();
             }

@@ -81,12 +81,6 @@
     <Compile Include="FormMoreStat.Designer.cs">
       <DependentUpon>FormMoreStat.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPM.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormPM.Designer.cs">
-      <DependentUpon>FormPM.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormTask.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,9 +133,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMoreStat.resx">
       <DependentUpon>FormMoreStat.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormPM.resx">
-      <DependentUpon>FormPM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTask.resx">
       <DependentUpon>FormTask.cs</DependentUpon>

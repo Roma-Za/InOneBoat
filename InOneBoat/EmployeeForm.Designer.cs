@@ -56,6 +56,7 @@
             this.кабинетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.изменитьЛичныеДанныеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.статистикаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.статистикаСотрудниковToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.проектыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelStat = new System.Windows.Forms.Panel();
             this.listBox_legend = new System.Windows.Forms.ListBox();
@@ -187,11 +188,18 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.panel_more_empl = new System.Windows.Forms.Panel();
+            this.button_show_stat = new System.Windows.Forms.Button();
+            this.comboBox_Empl = new System.Windows.Forms.ComboBox();
+            this.comboBox_Proj = new System.Windows.Forms.ComboBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.panelData.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panelStat.SuspendLayout();
             this.tableLayoutPanel_Empl_Graf.SuspendLayout();
             this.panelProj.SuspendLayout();
+            this.panel_more_empl.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelData
@@ -221,7 +229,7 @@
             this.panelData.Controls.Add(this.buttonOkP8);
             this.panelData.Location = new System.Drawing.Point(4, 34);
             this.panelData.Name = "panelData";
-            this.panelData.Size = new System.Drawing.Size(12, 358);
+            this.panelData.Size = new System.Drawing.Size(11, 358);
             this.panelData.TabIndex = 0;
             // 
             // maskedTextBoxNewPass
@@ -432,7 +440,8 @@
             // 
             this.кабинетToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.изменитьЛичныеДанныеToolStripMenuItem,
-            this.статистикаToolStripMenuItem});
+            this.статистикаToolStripMenuItem,
+            this.статистикаСотрудниковToolStripMenuItem});
             this.кабинетToolStripMenuItem.Name = "кабинетToolStripMenuItem";
             this.кабинетToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.кабинетToolStripMenuItem.Text = "Кабинет";
@@ -451,6 +460,13 @@
             this.статистикаToolStripMenuItem.Text = "Статистика";
             this.статистикаToolStripMenuItem.Click += new System.EventHandler(this.статистикаToolStripMenuItem_Click);
             // 
+            // статистикаСотрудниковToolStripMenuItem
+            // 
+            this.статистикаСотрудниковToolStripMenuItem.Name = "статистикаСотрудниковToolStripMenuItem";
+            this.статистикаСотрудниковToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.статистикаСотрудниковToolStripMenuItem.Text = "Статистика сотрудников";
+            this.статистикаСотрудниковToolStripMenuItem.Click += new System.EventHandler(this.статистикаСотрудниковToolStripMenuItem_Click);
+            // 
             // проектыToolStripMenuItem
             // 
             this.проектыToolStripMenuItem.Name = "проектыToolStripMenuItem";
@@ -466,9 +482,9 @@
             this.panelStat.Controls.Add(this.label4);
             this.panelStat.Controls.Add(this.comboBoxProj_PStat);
             this.panelStat.Controls.Add(this.dateTimePickerFrom);
-            this.panelStat.Location = new System.Drawing.Point(22, 34);
+            this.panelStat.Location = new System.Drawing.Point(21, 34);
             this.panelStat.Name = "panelStat";
-            this.panelStat.Size = new System.Drawing.Size(1065, 358);
+            this.panelStat.Size = new System.Drawing.Size(994, 358);
             this.panelStat.TabIndex = 2;
             // 
             // listBox_legend
@@ -1711,9 +1727,9 @@
             this.panelProj.Controls.Add(this.label7);
             this.panelProj.Controls.Add(this.label6);
             this.panelProj.Controls.Add(this.label5);
-            this.panelProj.Location = new System.Drawing.Point(1093, 34);
+            this.panelProj.Location = new System.Drawing.Point(1050, 34);
             this.panelProj.Name = "panelProj";
-            this.panelProj.Size = new System.Drawing.Size(10, 358);
+            this.panelProj.Size = new System.Drawing.Size(20, 358);
             this.panelProj.TabIndex = 3;
             // 
             // checkBox_PProj_only_my
@@ -1816,11 +1832,71 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Текущие задачи";
             // 
+            // panel_more_empl
+            // 
+            this.panel_more_empl.Controls.Add(this.button_show_stat);
+            this.panel_more_empl.Controls.Add(this.comboBox_Empl);
+            this.panel_more_empl.Controls.Add(this.comboBox_Proj);
+            this.panel_more_empl.Controls.Add(this.label21);
+            this.panel_more_empl.Controls.Add(this.label20);
+            this.panel_more_empl.Location = new System.Drawing.Point(1076, 34);
+            this.panel_more_empl.Name = "panel_more_empl";
+            this.panel_more_empl.Size = new System.Drawing.Size(27, 358);
+            this.panel_more_empl.TabIndex = 4;
+            // 
+            // button_show_stat
+            // 
+            this.button_show_stat.Location = new System.Drawing.Point(133, 297);
+            this.button_show_stat.Name = "button_show_stat";
+            this.button_show_stat.Size = new System.Drawing.Size(172, 23);
+            this.button_show_stat.TabIndex = 9;
+            this.button_show_stat.Text = "Показать статистику";
+            this.button_show_stat.UseVisualStyleBackColor = true;
+            this.button_show_stat.Click += new System.EventHandler(this.button_show_stat_Click);
+            // 
+            // comboBox_Empl
+            // 
+            this.comboBox_Empl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Empl.FormattingEnabled = true;
+            this.comboBox_Empl.Location = new System.Drawing.Point(108, 108);
+            this.comboBox_Empl.Name = "comboBox_Empl";
+            this.comboBox_Empl.Size = new System.Drawing.Size(261, 21);
+            this.comboBox_Empl.TabIndex = 8;
+            // 
+            // comboBox_Proj
+            // 
+            this.comboBox_Proj.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Proj.FormattingEnabled = true;
+            this.comboBox_Proj.Location = new System.Drawing.Point(111, 15);
+            this.comboBox_Proj.Name = "comboBox_Proj";
+            this.comboBox_Proj.Size = new System.Drawing.Size(261, 21);
+            this.comboBox_Proj.TabIndex = 7;
+            this.comboBox_Proj.SelectedIndexChanged += new System.EventHandler(this.comboBox_Proj_SelectedIndexChanged);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(23, 111);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(61, 13);
+            this.label21.TabIndex = 6;
+            this.label21.Text = "Работники";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(23, 18);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(52, 13);
+            this.label20.TabIndex = 5;
+            this.label20.Text = "Проекты";
+            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1115, 404);
+            this.Controls.Add(this.panel_more_empl);
             this.Controls.Add(this.panelProj);
             this.Controls.Add(this.panelStat);
             this.Controls.Add(this.panelData);
@@ -1838,6 +1914,8 @@
             this.tableLayoutPanel_Empl_Graf.PerformLayout();
             this.panelProj.ResumeLayout(false);
             this.panelProj.PerformLayout();
+            this.panel_more_empl.ResumeLayout(false);
+            this.panel_more_empl.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2004,5 +2082,12 @@
         private System.Windows.Forms.Label label_7_19;
         private System.Windows.Forms.Label label_7_20;
         private System.Windows.Forms.Label label_2_16;
+        private System.Windows.Forms.ToolStripMenuItem статистикаСотрудниковToolStripMenuItem;
+        private System.Windows.Forms.Panel panel_more_empl;
+        private System.Windows.Forms.Button button_show_stat;
+        private System.Windows.Forms.ComboBox comboBox_Empl;
+        private System.Windows.Forms.ComboBox comboBox_Proj;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
     }
 }
