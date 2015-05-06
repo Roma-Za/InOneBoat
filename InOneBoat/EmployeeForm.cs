@@ -58,6 +58,7 @@ namespace InOneBoat
                }
            }
         }
+
         private static void ClearAll(Control.ControlCollection c)
         {
             foreach (var item in c)
@@ -315,13 +316,6 @@ namespace InOneBoat
 
             }
             #endregion
-            logItemList.Sort(delegate(LogItem x, LogItem y) 
-            {
-                if (x.Start_time == null && y.Start_time == null) return 0;
-                else if (x.Start_time == null) return -1;
-                else if (y.Start_time == null) return 1;
-                else return x.Start_time.Date.CompareTo(y.Start_time.Date);
-            });
         }
 
         private void fillListBoxLegend()
@@ -785,6 +779,7 @@ namespace InOneBoat
             fillListBoxes();
         }
         #endregion
+
         #region Статистика сотрудников
         private void статистикаСотрудниковToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -811,6 +806,7 @@ namespace InOneBoat
                 }
             }
             #endregion
+
         }
 
         private void comboBox_Proj_SelectedIndexChanged(object sender, EventArgs e)

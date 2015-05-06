@@ -289,7 +289,9 @@ namespace InOneBoat
                     break;
             }
 
-            dateMon = date.AddDays(0 - dOfW);
+            DateTime dt = date.AddDays(0 - dOfW);
+            dateMon = new DateTime(dt.Year, dt.Month, dt.Day);
+
             for (int i = 0; i < 7; i++)
             {
                 foreach (var item in logItemList)

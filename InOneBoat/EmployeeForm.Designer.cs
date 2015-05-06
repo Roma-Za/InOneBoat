@@ -229,7 +229,7 @@
             this.panelData.Controls.Add(this.buttonOkP8);
             this.panelData.Location = new System.Drawing.Point(4, 34);
             this.panelData.Name = "panelData";
-            this.panelData.Size = new System.Drawing.Size(11, 358);
+            this.panelData.Size = new System.Drawing.Size(10, 358);
             this.panelData.TabIndex = 0;
             // 
             // maskedTextBoxNewPass
@@ -482,9 +482,9 @@
             this.panelStat.Controls.Add(this.label4);
             this.panelStat.Controls.Add(this.comboBoxProj_PStat);
             this.panelStat.Controls.Add(this.dateTimePickerFrom);
-            this.panelStat.Location = new System.Drawing.Point(21, 34);
+            this.panelStat.Location = new System.Drawing.Point(20, 34);
             this.panelStat.Name = "panelStat";
-            this.panelStat.Size = new System.Drawing.Size(994, 358);
+            this.panelStat.Size = new System.Drawing.Size(10, 358);
             this.panelStat.TabIndex = 2;
             // 
             // listBox_legend
@@ -1727,9 +1727,9 @@
             this.panelProj.Controls.Add(this.label7);
             this.panelProj.Controls.Add(this.label6);
             this.panelProj.Controls.Add(this.label5);
-            this.panelProj.Location = new System.Drawing.Point(1050, 34);
+            this.panelProj.Location = new System.Drawing.Point(36, 34);
             this.panelProj.Name = "panelProj";
-            this.panelProj.Size = new System.Drawing.Size(20, 358);
+            this.panelProj.Size = new System.Drawing.Size(10, 358);
             this.panelProj.TabIndex = 3;
             // 
             // checkBox_PProj_only_my
@@ -1839,9 +1839,9 @@
             this.panel_more_empl.Controls.Add(this.comboBox_Proj);
             this.panel_more_empl.Controls.Add(this.label21);
             this.panel_more_empl.Controls.Add(this.label20);
-            this.panel_more_empl.Location = new System.Drawing.Point(1076, 34);
+            this.panel_more_empl.Location = new System.Drawing.Point(535, 34);
             this.panel_more_empl.Name = "panel_more_empl";
-            this.panel_more_empl.Size = new System.Drawing.Size(27, 358);
+            this.panel_more_empl.Size = new System.Drawing.Size(568, 358);
             this.panel_more_empl.TabIndex = 4;
             // 
             // button_show_stat

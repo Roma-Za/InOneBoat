@@ -133,6 +133,117 @@ namespace InOneBoat
                 }
             }
         }
+        public Customer(string connect, string login, string pass)
+        {
+            ConnString = connect;
+
+            string commandText = "SELECT * FROM customer WHERE user_name = @login AND password = @pass";
+
+            using (SqlConnection sql_connect = new SqlConnection(connect))
+            {
+                sql_connect.Open();
+                SqlCommand cmd = sql_connect.CreateCommand();
+                cmd.CommandText = commandText;
+                cmd.Parameters.AddWithValue("@login", login);
+                cmd.Parameters.AddWithValue("@pass", pass);
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    #region присвоение
+                    try
+                    {
+                        ID = rdr.GetInt32(0);
+                    }
+                    catch (Exception)
+                    {
+
+                        ID = 0;
+                    }
+                    try
+                    {
+                        Login = rdr.GetString(1);
+                    }
+                    catch (Exception)
+                    {
+
+                        Login = "";
+                    }
+                    try
+                    {
+                        Password = rdr.GetString(2);
+                    }
+                    catch (Exception)
+                    {
+
+                        Password = "";
+                    }
+                    try
+                    {
+                        UserType = rdr.GetString(3);
+                    }
+                    catch (Exception)
+                    {
+                        UserType = "";
+
+                    }
+                    try
+                    {
+                        Surname = rdr.GetString(4);
+                    }
+                    catch (Exception)
+                    {
+                        Surname = "";
+
+                    }
+                    try
+                    {
+                        Name = rdr.GetString(5);
+                    }
+                    catch (Exception)
+                    {
+                        Name = "";
+
+                    }
+                    try
+                    {
+                        Patronymic = rdr.GetString(6);
+                    }
+                    catch (Exception)
+                    {
+
+                        Patronymic = "";
+                    }
+                    try
+                    {
+                        Phone_number = rdr.GetString(7);
+                    }
+                    catch (Exception)
+                    {
+                        Phone_number = "";
+
+                    }
+                    try
+                    {
+                        Email = rdr.GetString(8);
+                    }
+                    catch (Exception)
+                    {
+                        Email = "";
+
+                    }
+                    try
+                    {
+                        Info = rdr.GetString(9);
+                    }
+                    catch (Exception)
+                    {
+                        Info = "";
+
+                    }
+                    #endregion
+                }
+            }
+        }
         public string GetSNP()
         {
             return String.Format("{0} {1} {2}", Surname, Name, Patronymic);
@@ -151,9 +262,10 @@ namespace InOneBoat
                     cmd.Parameters.AddWithValue("@ID", ID);
                     cmd.ExecuteNonQuery();
                 }
+                Login = login;
             }
 
-            if (pass != Password)
+            if (pass != Password && pass != "")
             {
                 string comm = "UPDATE customer SET password = @pass WHERE id = @ID";
                 using (SqlConnection sql_connect = new SqlConnection(ConnString))
@@ -165,6 +277,7 @@ namespace InOneBoat
                     cmd.Parameters.AddWithValue("@ID", ID);
                     cmd.ExecuteNonQuery();
                 }
+                Password = pass;
             }
 
             if (type != UserType)
@@ -179,6 +292,7 @@ namespace InOneBoat
                     cmd.Parameters.AddWithValue("@ID", ID);
                     cmd.ExecuteNonQuery();
                 }
+                UserType = type;
             }
 
             if (sur != Surname)
@@ -193,6 +307,7 @@ namespace InOneBoat
                     cmd.Parameters.AddWithValue("@ID", ID);
                     cmd.ExecuteNonQuery();
                 }
+                Surname = sur;
             }
 
             if (name != Name)
@@ -207,6 +322,7 @@ namespace InOneBoat
                     cmd.Parameters.AddWithValue("@ID", ID);
                     cmd.ExecuteNonQuery();
                 }
+                Name = name;
             }
 
             if (pat != Patronymic)
@@ -221,6 +337,7 @@ namespace InOneBoat
                     cmd.Parameters.AddWithValue("@ID", ID);
                     cmd.ExecuteNonQuery();
                 }
+                Patronymic = pat;
             }
 
             if (phone != Phone_number)
@@ -235,6 +352,7 @@ namespace InOneBoat
                     cmd.Parameters.AddWithValue("@ID", ID);
                     cmd.ExecuteNonQuery();
                 }
+                Phone_number = phone;
             }
 
             if (em != Email)
@@ -249,6 +367,7 @@ namespace InOneBoat
                     cmd.Parameters.AddWithValue("@ID", ID);
                     cmd.ExecuteNonQuery();
                 }
+                Email = em;
             }
 
             if (info != Info)
@@ -263,6 +382,7 @@ namespace InOneBoat
                     cmd.Parameters.AddWithValue("@ID", ID);
                     cmd.ExecuteNonQuery();
                 }
+                Info = info;
             }
         }
     }

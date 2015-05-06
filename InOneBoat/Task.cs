@@ -19,6 +19,7 @@ namespace InOneBoat
         public int Proj_id { set; get; }
         public string Priority { set; get; }
         public string Summary { set; get; }
+
         public string ConnString { set; get; }
         private string[] priorities = { "high", "normal", "low" };
         private string[] prioritiesRu = { "высокий", "нормальный", "низкий" };
