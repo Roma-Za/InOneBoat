@@ -1729,7 +1729,7 @@
             this.panelProj.Controls.Add(this.label5);
             this.panelProj.Location = new System.Drawing.Point(36, 34);
             this.panelProj.Name = "panelProj";
-            this.panelProj.Size = new System.Drawing.Size(10, 358);
+            this.panelProj.Size = new System.Drawing.Size(1051, 358);
             this.panelProj.TabIndex = 3;
             // 
             // checkBox_PProj_only_my
@@ -1839,9 +1839,9 @@
             this.panel_more_empl.Controls.Add(this.comboBox_Proj);
             this.panel_more_empl.Controls.Add(this.label21);
             this.panel_more_empl.Controls.Add(this.label20);
-            this.panel_more_empl.Location = new System.Drawing.Point(535, 34);
+            this.panel_more_empl.Location = new System.Drawing.Point(1093, 34);
             this.panel_more_empl.Name = "panel_more_empl";
-            this.panel_more_empl.Size = new System.Drawing.Size(568, 358);
+            this.panel_more_empl.Size = new System.Drawing.Size(10, 358);
             this.panel_more_empl.TabIndex = 4;
             // 
             // button_show_stat

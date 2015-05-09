@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace InOneBoat
@@ -37,7 +32,7 @@ namespace InOneBoat
         {
             InitializeComponent();
             HideAllPanel();
-            I_am_Emp = new Employee(connect, login, pass);    
+            I_am_Emp = new Employee(connect, login, pass);
             this.Text = String.Format("{0} {1}, {2}", I_am_Emp.Name, I_am_Emp.Surname, I_am_Emp.Role);
             panelProj.Visible = true;
             panelProj.Dock = DockStyle.Fill;
@@ -49,14 +44,14 @@ namespace InOneBoat
             Friday = new Label[] { label_5_8, label_5_9, label_5_10, label_5_11, label_5_12, label_5_13, label_5_14, label_5_15, label_5_16, label_5_17, label_5_18, label_5_19, label_5_20 };
             Saturday = new Label[] { label_6_8, label_6_9, label_6_10, label_6_11, label_6_12, label_6_13, label_6_14, label_6_15, label_6_16, label_6_17, label_6_18, label_6_19, label_6_20 };
             Sunday = new Label[] { label_7_8, label_7_9, label_7_10, label_7_11, label_7_12, label_7_13, label_7_14, label_7_15, label_7_16, label_7_17, label_7_18, label_7_19, label_7_20 };
-           ToolStripItem [] tsi = menuStrip1.Items.Find("статистикаСотрудниковToolStripMenuItem", true);
-           if (I_am_Emp.Role != "PM")
-           {
-               foreach (ToolStripItem item in tsi)
-               {
-                   item.Visible = false;
-               }
-           }
+            ToolStripItem[] tsi = menuStrip1.Items.Find("статистикаСотрудниковToolStripMenuItem", true);
+            if (I_am_Emp.Role != "PM")
+            {
+                foreach (ToolStripItem item in tsi)
+                {
+                    item.Visible = false;
+                }
+            }
         }
 
         private static void ClearAll(Control.ControlCollection c)
@@ -253,7 +248,7 @@ namespace InOneBoat
 
             }
             #endregion
-           
+
         }
 
         private void fillLogItems()
@@ -355,7 +350,7 @@ namespace InOneBoat
             }
             DateTime dt = date.AddDays(0 - dOfW);
             dateMon = new DateTime(dt.Year, dt.Month, dt.Day);
-            
+
             for (int i = 0; i < 7; i++)
             {
                 foreach (var item in logItemList)
@@ -385,7 +380,7 @@ namespace InOneBoat
                 }
 
             }
-            #endregion       
+            #endregion
         }
 
         private void listBox_legend_DrawItem(object sender, DrawItemEventArgs e)
@@ -913,7 +908,7 @@ namespace InOneBoat
 
             }
             #endregion
-        
+
         }
 
         private void button_show_stat_Click(object sender, EventArgs e)

@@ -100,6 +100,7 @@
       <DependentUpon>Form_Log_Item.cs</DependentUpon>
     </Compile>
     <Compile Include="LogItem.cs" />
+    <Compile Include="MainEmail.cs" />
     <Compile Include="Task.cs" />
     <Compile Include="Validators\EmailValid.cs" />
     <Compile Include="Validators\IsFilled.cs" />

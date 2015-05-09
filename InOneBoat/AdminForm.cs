@@ -23,14 +23,15 @@ namespace InOneBoat
         private Employee TempEmp;
         private Employee I_am_Emp;
         private String tempTxt = "";
+        private MainEmail memail;
         public AdminForm(string login, string pass)
         {
             InitializeComponent();
             HideAllPanel();
             I_am_Emp = new Employee(connect, login, pass);
             this.Text = String.Format("{0} {1}, {2}", I_am_Emp.Name, I_am_Emp.Surname, I_am_Emp.Role);
+            memail = new MainEmail(connect);
         }
-
 
         private static void ClearAll(Control.ControlCollection c)
         {
@@ -40,7 +41,8 @@ namespace InOneBoat
                 try
                 {
                     if (item is ComboBox) ((ComboBox)item).Items.Clear();
-                }catch{}
+                }
+                catch { }
 
                 if (item is CheckBox) ((CheckBox)item).Checked = false;
                 if (item is RichTextBox) ((RichTextBox)item).Text = "";
@@ -604,6 +606,14 @@ namespace InOneBoat
                             cmd.Parameters.Add(param2);
 
                             cmd.ExecuteNonQuery();
+
+                            MainEmail me = new MainEmail(connect);
+                            Employee emp = new Employee(connect, eId);
+                            if (emp.Send)
+                            {
+                                string mess = "Вы были добавленны в проект " + comboBoxProjP3.Text;
+                                me.SendMail(new string[] { emp.Email }, "Уведобмление", mess);
+                            }
                         }
                     }
                     #endregion
@@ -1199,6 +1209,13 @@ namespace InOneBoat
                             cmd.Parameters.Add(param2);
 
                             cmd.ExecuteNonQuery();
+                            MainEmail me = new MainEmail(connect);
+                            Employee emp = new Employee(connect, empId);
+                            if (emp.Send)
+                            {
+                                string mess = "Вы были удалены из проекта " + comboBoxProjP5.Text;
+                                me.SendMail(new string[] { emp.Email }, "Уведобмление", mess);
+                            }
                         }
                     }
                     #endregion
@@ -2266,6 +2283,11 @@ namespace InOneBoat
                         textBox_email_P1_in_P8.Text,
                         textBox_info_P1_in_P8.Text
                         );
+                    MainEmail me = new MainEmail(connect);
+
+                    string mess = "Ваши личные данные, возможно, были изменены администрацией, проверте.";
+                    me.SendMail(new string[] { TempCust.Email }, "Уведобмление", mess);
+
                 }
                 else MessageBox.Show(resultValid);
             }
@@ -2370,6 +2392,14 @@ namespace InOneBoat
                     comboBox_role_P2_in_P8.Text,
                     checkBox_send_P2_in_P8.Checked
                         );
+
+                    MainEmail me = new MainEmail(connect);
+
+                    if (TempEmp.Send)
+                    {
+                        string mess = "Ваши личные данные, возможно, были изменены администрацией, проверте.";
+                        me.SendMail(new string[] { TempEmp.Email }, "Уведобмление", mess);
+                    }
                 }
                 else MessageBox.Show(resultValid);
             }
@@ -2690,5 +2720,69 @@ namespace InOneBoat
         }
         #endregion
 
+        #region редактировать главный емейл
+        private void главнуюПочтуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Control.ControlCollection c = panel_edit_email.Controls;
+            ClearAll(c);
+            HideAllPanel();
+            panel_edit_email.Visible = true;
+            panel_edit_email.Dock = DockStyle.Fill;
+            menuStrip1.Enabled = false;
+
+            textBox_edit_email.Text = memail.Email;
+            textBox_edit_password.Text = memail.Password;
+
+        }
+
+        private void button_edit_email_ok_Click(object sender, EventArgs e)
+        {
+            string resultValid = "";
+            Validator val = new Validator();
+            val.addValidator(new InOneBoat.Validators.IsFilled());
+
+            foreach (var item in panel_edit_email.Controls)
+            {
+                if (item is TextBox)
+                {
+                    val.setText(((TextBox)item).Text);
+                    if (!val.check())
+                    {
+                        resultValid += val.getCause() + "\n";
+                        break;
+                    }
+                }
+
+            }
+            if (resultValid == "")
+            {
+                val = new Validator();
+                val.addValidator(new InOneBoat.Validators.EmailValid());
+                val.setText(textBox_edit_email.Text);
+                if (!val.check()) resultValid += val.getCause() + "\n";
+
+            }
+
+            if (resultValid == "")
+            {
+                memail.EditEmail(textBox_edit_email.Text, textBox_edit_password.Text);
+
+                Control.ControlCollection c = panel_edit_email.Controls;
+                ClearAll(c);
+                HideAllPanel();
+                menuStrip1.Enabled = true;
+            }
+            else MessageBox.Show(resultValid);
+
+        }
+
+        private void button_edit_email_cancel_Click(object sender, EventArgs e)
+        {
+            Control.ControlCollection c = panel_edit_email.Controls;
+            ClearAll(c);
+            HideAllPanel();
+            menuStrip1.Enabled = true;
+        }
+        #endregion
     }
 }

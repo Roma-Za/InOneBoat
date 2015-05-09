@@ -1,20 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace InOneBoat
 {
     public partial class Recover : Form
     {
-        public string Password { set; get; }
+        public int ID { set; private get; }
+        public string Password { set; private get; }
+        public string UserType { set; private get; }
+        public string Email { set; private get; }
+        private string connect = ConfigurationManager.ConnectionStrings["dbProject"].ConnectionString;
+        private MainEmail memail;
         public Recover()
         {
             InitializeComponent();
@@ -28,12 +26,11 @@ namespace InOneBoat
 
         private void sendMail()
         {
-            if (Password != "")
+            if (Password != "" && Email.Equals(textBoxEmail.Text))
             {
-
-                string email = textBoxEmail.Text;
-                //послать пароль на почту
-
+                string mText = "Ваш логин " + textBoxLogin.Text + " пароль " + Password;
+                memail = new MainEmail(connect);
+                memail.SendMail(new string[] { Email }, "Забытый пароль", mText);
                 MessageBox.Show("Пароль отправлен на Ваш email.");
             }
             else
@@ -46,8 +43,72 @@ namespace InOneBoat
 
         private void getPass()
         {
-            string commandText = "SELECT password FROM person WHERE user_name = @login AND email= @email";
-            string connect = ConfigurationManager.ConnectionStrings["dbProject"].ConnectionString;
+            getUserType();
+
+            if (UserType.Equals("customer"))
+            {
+                getEmailCustomer();
+            }
+            else
+            {
+                getEmailEmpl();
+            }
+        }
+
+        private void getEmailCustomer()
+        {
+            string commandText = "SELECT email FROM customer WHERE user_name = @login";
+            using (SqlConnection sql_connect = new SqlConnection(connect))
+            {
+                sql_connect.Open();
+                SqlCommand cmd = sql_connect.CreateCommand();
+                cmd.CommandText = commandText;
+                cmd.Parameters.AddWithValue("@login", textBoxLogin.Text);
+
+                SqlDataReader rdr = cmd.ExecuteReader();
+                rdr.Read();
+
+                try
+                {
+                    Email = rdr.GetString(0);
+                }
+                catch (Exception)
+                {
+
+                    Email = "";
+                }
+            }
+        }
+
+        private void getEmailEmpl()
+        {
+            string commandText = "SELECT email FROM Employee WHERE user_name = @login";
+            using (SqlConnection sql_connect = new SqlConnection(connect))
+            {
+                sql_connect.Open();
+                SqlCommand cmd = sql_connect.CreateCommand();
+                cmd.CommandText = commandText;
+                cmd.Parameters.AddWithValue("@login", textBoxLogin.Text);
+
+                SqlDataReader rdr = cmd.ExecuteReader();
+                rdr.Read();
+
+                try
+                {
+                    Email = rdr.GetString(0);
+                }
+                catch (Exception)
+                {
+
+                    Email = "";
+                }
+            }
+        }
+
+        private void getUserType()
+        {
+
+            string commandText = "SELECT users.id, users.password, user_types.name FROM users INNER JOIN user_types ON users.user_type_id = user_types.id WHERE users.user_name = @login";
 
             using (SqlConnection sql_connect = new SqlConnection(connect))
             {
@@ -55,22 +116,39 @@ namespace InOneBoat
                 SqlCommand cmd = sql_connect.CreateCommand();
                 cmd.CommandText = commandText;
                 cmd.Parameters.AddWithValue("@login", textBoxLogin.Text);
-                cmd.Parameters.AddWithValue("@email", textBoxEmail.Text);
 
                 SqlDataReader rdr = cmd.ExecuteReader();
-                rdr.Read();
-                try
+                while (rdr.Read())
                 {
-                    Password = rdr["password"].ToString();
-                }
-                catch (Exception)
-                {
+                    try
+                    {
+                        ID = rdr.GetInt32(0);
+                    }
+                    catch (Exception)
+                    {
 
-                    Password = "";
-                }
-                finally
-                {
-                    sql_connect.Close();
+                        ID = 0;
+                    }
+
+                    try
+                    {
+                        Password = rdr.GetString(1);
+                    }
+                    catch (Exception)
+                    {
+
+                        Password = "";
+                    }
+
+                    try
+                    {
+                        UserType = rdr.GetString(2);
+                    }
+                    catch (Exception)
+                    {
+
+                        UserType = "";
+                    }
                 }
             }
         }

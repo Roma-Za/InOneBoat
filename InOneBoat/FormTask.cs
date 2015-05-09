@@ -1,14 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace InOneBoat
@@ -31,10 +24,10 @@ namespace InOneBoat
             projectName = projName;
             this.parent_task = parent_task;
             this.task = task;
-           
+
 
             if (task != null)
-            { 
+            {
                 if (!task.isInTask(I_am_Emp.ID)) menuStrip1.Enabled = false;
                 labelTaskName.Text = task.Summary;
                 textBoxDescription.Text = task.Description;
@@ -381,7 +374,7 @@ namespace InOneBoat
 
         private void listBox_Attach_List_DoubleClick(object sender, EventArgs e)
         {
-  
+
         }
 
         private void логированиеВремениToolStripMenuItem_Click(object sender, EventArgs e)
@@ -421,8 +414,21 @@ namespace InOneBoat
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 attList.Add(new Attachment(connect, this.task.ID, openFileDialog1.FileName));
+
+                MainEmail me = new MainEmail(connect);
+                foreach (var item in task.getWatchersList())
+                {
+                    Employee TempEmp = new Employee(connect, item);
+                    if (TempEmp.Send)
+                    {
+                        string mess = "Задача на которую Вы подписаны: " + task.Summary + ", изменилась, добавленны приложения.";
+                        me.SendMail(new string[] { TempEmp.Email }, "Уведобмление", mess);
+                    }
+                }
+
             }
             addAttach();
+
             foreach (var item in attList)
             {
                 checkedListBox_P_Del_Attach.Items.Add(item.File_path, false);
@@ -491,6 +497,7 @@ namespace InOneBoat
 
             }
             #endregion
+
             #region записываем имена тасков
             foreach (var item in logItemList)
             {
@@ -540,7 +547,20 @@ namespace InOneBoat
                     }
 
                 }
-               
+
+            }
+            if (checkedListBox_P_Del_Attach.CheckedItems.Count > 0)
+            {
+                MainEmail me = new MainEmail(connect);
+                foreach (var item in task.getWatchersList())
+                {
+                    Employee TempEmp = new Employee(connect, item);
+                    if (TempEmp.Send)
+                    {
+                        string mess = "Задача на которую Вы подписаны: " + task.Summary + ", изменилась, удалены приложения.";
+                        me.SendMail(new string[] { TempEmp.Email }, "Уведобмление", mess);
+                    }
+                }
             }
             checkedListBox_P_Del_Attach.Items.Clear();
             addAttach();
@@ -675,6 +695,18 @@ namespace InOneBoat
                 string summ = textBox_P_Edit_Summ.Text;
                 string des = textBox_P_Edit_Discr.Text;
                 task.EditTask(des, est, st, pr, summ);
+
+                MainEmail me = new MainEmail(connect);
+                foreach (var item in task.getWatchersList())
+                {
+                    Employee TempEmp = new Employee(connect, item);
+                    if (TempEmp.Send)
+                    {
+                        string mess = "Задача на которую Вы подписаны: " + task.Summary + ", возможно изменилась, проверте.";
+                        me.SendMail(new string[] { TempEmp.Email }, "Уведобмление", mess);
+                    }
+                }
+
                 this.Close();
             }
             else MessageBox.Show(resultValid);

@@ -43,6 +43,7 @@
             this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.информациюОПользователяхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.информациюОПроектеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.главнуюПочтуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonCancelP1 = new System.Windows.Forms.Button();
             this.buttonOkP1 = new System.Windows.Forms.Button();
@@ -185,6 +186,13 @@
             this.label50 = new System.Windows.Forms.Label();
             this.textBoxNameP10 = new System.Windows.Forms.TextBox();
             this.label49 = new System.Windows.Forms.Label();
+            this.panel_edit_email = new System.Windows.Forms.Panel();
+            this.button_edit_email_cancel = new System.Windows.Forms.Button();
+            this.button_edit_email_ok = new System.Windows.Forms.Button();
+            this.textBox_edit_password = new System.Windows.Forms.TextBox();
+            this.textBox_edit_email = new System.Windows.Forms.TextBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -198,6 +206,7 @@
             this.panel1_in_P8.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
+            this.panel_edit_email.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -294,7 +303,8 @@
             // 
             this.редактироватьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.информациюОПользователяхToolStripMenuItem,
-            this.информациюОПроектеToolStripMenuItem});
+            this.информациюОПроектеToolStripMenuItem,
+            this.главнуюПочтуToolStripMenuItem});
             this.редактироватьToolStripMenuItem.Name = "редактироватьToolStripMenuItem";
             this.редактироватьToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
             this.редактироватьToolStripMenuItem.Text = "Редактировать";
@@ -312,6 +322,13 @@
             this.информациюОПроектеToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.информациюОПроектеToolStripMenuItem.Text = "информацию о проекте";
             this.информациюОПроектеToolStripMenuItem.Click += new System.EventHandler(this.информациюОПроектеToolStripMenuItem_Click);
+            // 
+            // главнуюПочтуToolStripMenuItem
+            // 
+            this.главнуюПочтуToolStripMenuItem.Name = "главнуюПочтуToolStripMenuItem";
+            this.главнуюПочтуToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.главнуюПочтуToolStripMenuItem.Text = "главную почту";
+            this.главнуюПочтуToolStripMenuItem.Click += new System.EventHandler(this.главнуюПочтуToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -929,9 +946,9 @@
             this.panel6.Controls.Add(this.label25);
             this.panel6.Controls.Add(this.buttonOkP6);
             this.panel6.Controls.Add(this.label26);
-            this.panel6.Location = new System.Drawing.Point(182, 27);
+            this.panel6.Location = new System.Drawing.Point(169, 27);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(617, 320);
+            this.panel6.Size = new System.Drawing.Size(19, 320);
             this.panel6.TabIndex = 6;
             // 
             // label27
@@ -1015,7 +1032,7 @@
             this.panel7.Controls.Add(this.label29);
             this.panel7.Controls.Add(this.comboBoxCusP7);
             this.panel7.Controls.Add(this.label28);
-            this.panel7.Location = new System.Drawing.Point(805, 27);
+            this.panel7.Location = new System.Drawing.Point(194, 27);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(20, 320);
             this.panel7.TabIndex = 7;
@@ -1085,9 +1102,9 @@
             this.panel8.Controls.Add(this.buttonCancelP8);
             this.panel8.Controls.Add(this.buttonOkP8);
             this.panel8.Controls.Add(this.comboBoxUserP8);
-            this.panel8.Location = new System.Drawing.Point(831, 27);
+            this.panel8.Location = new System.Drawing.Point(220, 27);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(34, 320);
+            this.panel8.Size = new System.Drawing.Size(18, 320);
             this.panel8.TabIndex = 8;
             // 
             // panel_2_in_P8
@@ -1508,7 +1525,7 @@
             this.panel9.Controls.Add(this.listBoxProjP9);
             this.panel9.Controls.Add(this.label32);
             this.panel9.Controls.Add(this.comboBoxEmplP9);
-            this.panel9.Location = new System.Drawing.Point(871, 27);
+            this.panel9.Location = new System.Drawing.Point(244, 27);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(21, 320);
             this.panel9.TabIndex = 9;
@@ -1579,9 +1596,9 @@
             this.panel10.Controls.Add(this.label50);
             this.panel10.Controls.Add(this.textBoxNameP10);
             this.panel10.Controls.Add(this.label49);
-            this.panel10.Location = new System.Drawing.Point(898, 27);
+            this.panel10.Location = new System.Drawing.Point(271, 27);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(24, 320);
+            this.panel10.Size = new System.Drawing.Size(17, 320);
             this.panel10.TabIndex = 10;
             // 
             // comboBoxProjP10
@@ -1656,11 +1673,77 @@
             this.label49.TabIndex = 0;
             this.label49.Text = "Название проекта";
             // 
+            // panel_edit_email
+            // 
+            this.panel_edit_email.Controls.Add(this.button_edit_email_cancel);
+            this.panel_edit_email.Controls.Add(this.button_edit_email_ok);
+            this.panel_edit_email.Controls.Add(this.textBox_edit_password);
+            this.panel_edit_email.Controls.Add(this.textBox_edit_email);
+            this.panel_edit_email.Controls.Add(this.label53);
+            this.panel_edit_email.Controls.Add(this.label52);
+            this.panel_edit_email.Location = new System.Drawing.Point(298, 27);
+            this.panel_edit_email.Name = "panel_edit_email";
+            this.panel_edit_email.Size = new System.Drawing.Size(635, 320);
+            this.panel_edit_email.TabIndex = 11;
+            // 
+            // button_edit_email_cancel
+            // 
+            this.button_edit_email_cancel.Location = new System.Drawing.Point(336, 282);
+            this.button_edit_email_cancel.Name = "button_edit_email_cancel";
+            this.button_edit_email_cancel.Size = new System.Drawing.Size(75, 23);
+            this.button_edit_email_cancel.TabIndex = 5;
+            this.button_edit_email_cancel.Text = "Отмена";
+            this.button_edit_email_cancel.UseVisualStyleBackColor = true;
+            this.button_edit_email_cancel.Click += new System.EventHandler(this.button_edit_email_cancel_Click);
+            // 
+            // button_edit_email_ok
+            // 
+            this.button_edit_email_ok.Location = new System.Drawing.Point(147, 282);
+            this.button_edit_email_ok.Name = "button_edit_email_ok";
+            this.button_edit_email_ok.Size = new System.Drawing.Size(75, 23);
+            this.button_edit_email_ok.TabIndex = 4;
+            this.button_edit_email_ok.Text = "Ок";
+            this.button_edit_email_ok.UseVisualStyleBackColor = true;
+            this.button_edit_email_ok.Click += new System.EventHandler(this.button_edit_email_ok_Click);
+            // 
+            // textBox_edit_password
+            // 
+            this.textBox_edit_password.Location = new System.Drawing.Point(147, 66);
+            this.textBox_edit_password.Name = "textBox_edit_password";
+            this.textBox_edit_password.Size = new System.Drawing.Size(266, 20);
+            this.textBox_edit_password.TabIndex = 3;
+            // 
+            // textBox_edit_email
+            // 
+            this.textBox_edit_email.Location = new System.Drawing.Point(147, 23);
+            this.textBox_edit_email.Name = "textBox_edit_email";
+            this.textBox_edit_email.Size = new System.Drawing.Size(266, 20);
+            this.textBox_edit_email.TabIndex = 2;
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(34, 73);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(53, 13);
+            this.label53.TabIndex = 1;
+            this.label53.Text = "Password";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(34, 26);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(32, 13);
+            this.label52.TabIndex = 0;
+            this.label52.Text = "Email";
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(945, 352);
+            this.Controls.Add(this.panel_edit_email);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel8);
@@ -1701,6 +1784,8 @@
             this.panel9.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
+            this.panel_edit_email.ResumeLayout(false);
+            this.panel_edit_email.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1864,6 +1949,14 @@
         private System.Windows.Forms.ComboBox comboBoxProjP10;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.ComboBox comboBox_role_P2_in_P8;
+        private System.Windows.Forms.ToolStripMenuItem главнуюПочтуToolStripMenuItem;
+        private System.Windows.Forms.Panel panel_edit_email;
+        private System.Windows.Forms.Button button_edit_email_cancel;
+        private System.Windows.Forms.Button button_edit_email_ok;
+        private System.Windows.Forms.TextBox textBox_edit_password;
+        private System.Windows.Forms.TextBox textBox_edit_email;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.Label label52;
 
     }
 }

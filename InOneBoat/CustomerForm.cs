@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace InOneBoat
@@ -21,7 +16,8 @@ namespace InOneBoat
         private List<Task> tasksList;
         private List<LogItem> logItemList;
         private int currentEmplId;
-        private string[] statusesRuAnd = { "не стартовавшая", "в процессе", "выполнена", "переоткрыта", "закрыта"};
+        private string[] statusesRuAnd = { "не стартовавшая", "в процессе", "выполнена", "переоткрыта", "закрыта" };
+
         public CustomerForm(string login, string pass)
         {
             InitializeComponent();
@@ -75,7 +71,7 @@ namespace InOneBoat
             textBox_Phone.Text = I_am_сust.Phone_number;
             textBox_Email.Text = I_am_сust.Email;
             textBoxInfo.Text = I_am_сust.Info;
-            
+
         }
 
         private void buttonOkP8_Click(object sender, EventArgs e)
@@ -262,7 +258,7 @@ namespace InOneBoat
                 cmd.CommandText = commandText;
 
                 int value = 0;
-                
+
                 if (!DicProj.TryGetValue(comboBox_Proj.Text, out value)) MessageBox.Show("ошибка поиска значения по ключу");
                 cmd.Parameters.AddWithValue("@proj", value);
                 SqlDataReader rdr = cmd.ExecuteReader();
@@ -380,29 +376,29 @@ namespace InOneBoat
                 if (!DicEmp.TryGetValue(comboBox_Empl.Text, out emplID)) MessageBox.Show("ошибка поиска значения по ключу");
                 currentEmplId = emplID;
                 List<Task> selectedTaskList = new List<Task>();
-               
+
                 foreach (var item in tasksList)
                 {
                     foreach (var i in checkedListBox_task_select.CheckedItems)
                     {
-                        if (item.getStatusRu().Equals(i.ToString())) 
+                        if (item.getStatusRu().Equals(i.ToString()))
                         {
                             selectedTaskList.Add(item);
                             break;
-                        }                      
+                        }
                     }
                 }
 
                 DataTable dt = new DataTable();
-                
+
                 DataColumn summColumn = new DataColumn("Название", typeof(string));
                 DataColumn discrColumn = new DataColumn("Описание", typeof(string));
                 DataColumn estColumn = new DataColumn("Время на вып.(ч)", typeof(float));
                 DataColumn statColumn = new DataColumn("Статус", typeof(string));
-                DataColumn priorColumn = new DataColumn("Приоритет", typeof(string)); 
+                DataColumn priorColumn = new DataColumn("Приоритет", typeof(string));
                 DataColumn timeColumn = new DataColumn("логированное время(ч)", typeof(float));
-                List<DataColumn> dcl = new List<DataColumn>() { summColumn, discrColumn, estColumn, statColumn, priorColumn, timeColumn }; 
-             
+                List<DataColumn> dcl = new List<DataColumn>() { summColumn, discrColumn, estColumn, statColumn, priorColumn, timeColumn };
+
                 dt.Columns.AddRange(dcl.ToArray());
 
                 foreach (var i in selectedTaskList)
@@ -413,16 +409,16 @@ namespace InOneBoat
                     newRow["Время на вып.(ч)"] = i.Estimate;
                     newRow["Статус"] = i.getStatusRu();
                     newRow["Приоритет"] = i.getPrioritiRu();
-                    
-                        fillLogItems(i.ID);
-                        float logTime = 0;
-                        
-                        foreach (var item in logItemList)
-                        {
-                            logTime += item.End_time.Hour - item.Start_time.Hour;
-                        }
-                        newRow["логированное время(ч)"] = logTime;
-                   
+
+                    fillLogItems(i.ID);
+                    float logTime = 0;
+
+                    foreach (var item in logItemList)
+                    {
+                        logTime += item.End_time.Hour - item.Start_time.Hour;
+                    }
+                    newRow["логированное время(ч)"] = logTime;
+
                     dt.Rows.Add(newRow);
                 }
                 dataGridView_task.DataSource = dt;

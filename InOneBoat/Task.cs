@@ -2,10 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace InOneBoat
 {
@@ -93,7 +89,7 @@ namespace InOneBoat
             {
                 newTaskChild();
             }
-            else 
+            else
             {
                 newTask();
             }
@@ -121,9 +117,9 @@ namespace InOneBoat
                         param2.Value = participants[i];
                         param2.SqlDbType = SqlDbType.Int;
                         cmd.Parameters.Add(param2);
-                        
+
                         cmd.ExecuteNonQuery();
-                    }                   
+                    }
                 }
             }
         }
@@ -302,20 +298,23 @@ namespace InOneBoat
             }
         }
 
-        public bool isInTask(int idP) {
-           return participants.Contains(idP);
+        public bool isInTask(int idP)
+        {
+            return participants.Contains(idP);
         }
 
-        public string getPrioritiRu() 
+        public string getPrioritiRu()
         {
             for (int i = 0; i < priorities.Length; i++)
-			{
-			 if(priorities[i]==Priority){
-                 return prioritiesRu[i];
-             }
-			}
+            {
+                if (priorities[i] == Priority)
+                {
+                    return prioritiesRu[i];
+                }
+            }
             return "нет";
         }
+
         public string getPrioritiEn(string prRu)
         {
             for (int i = 0; i < prioritiesRu.Length; i++)
@@ -327,6 +326,7 @@ namespace InOneBoat
             }
             return "нет";
         }
+
         public string getStatusRu()
         {
             for (int i = 0; i < statuses.Length; i++)
@@ -338,6 +338,7 @@ namespace InOneBoat
             }
             return "нет";
         }
+
         public string getStatusEn(string statRu)
         {
             for (int i = 0; i < statusesRu.Length; i++)
@@ -349,7 +350,8 @@ namespace InOneBoat
             }
             return "нет";
         }
-        public List<string> getComments() 
+
+        public List<string> getComments()
         {
             string commandText = "SELECT * FROM comments WHERE task_id = @id";
 
@@ -437,7 +439,7 @@ namespace InOneBoat
             return watchersList.Contains(id);
         }
 
-        public void addWatcher(int id) 
+        public void addWatcher(int id)
         {
             if (!watchersList.Contains(id))
             {
@@ -445,28 +447,28 @@ namespace InOneBoat
                 {
                     sql_connect.Open();
                     string sql = string.Format("Insert Into watchers (employee_id, task_id) Values (@employee_id,  @ID)");
-                  
-                        using (SqlCommand cmd = new SqlCommand(sql, sql_connect))
-                        {
-                            SqlParameter param = new SqlParameter();
-                            param.ParameterName = "@employee_id";
-                            param.Value = id;
-                            param.SqlDbType = SqlDbType.Int; 
-                            cmd.Parameters.Add(param);
-                            SqlParameter param2 = new SqlParameter();                         
-                            param2.ParameterName = "@ID";
-                            param2.Value = ID;
-                            param2.SqlDbType = SqlDbType.Int;
-                            cmd.Parameters.Add(param2);
-                            cmd.ExecuteNonQuery();
-                        }
-                    
+
+                    using (SqlCommand cmd = new SqlCommand(sql, sql_connect))
+                    {
+                        SqlParameter param = new SqlParameter();
+                        param.ParameterName = "@employee_id";
+                        param.Value = id;
+                        param.SqlDbType = SqlDbType.Int;
+                        cmd.Parameters.Add(param);
+                        SqlParameter param2 = new SqlParameter();
+                        param2.ParameterName = "@ID";
+                        param2.Value = ID;
+                        param2.SqlDbType = SqlDbType.Int;
+                        cmd.Parameters.Add(param2);
+                        cmd.ExecuteNonQuery();
+                    }
+
                 }
                 watchersList.Add(id);
             }
         }
 
-        public void delWatcher(int id) 
+        public void delWatcher(int id)
         {
             if (watchersList.Contains(id))
             {
@@ -495,9 +497,9 @@ namespace InOneBoat
             }
         }
 
-        public void EditTask(string desc, float estimate, string status, string priority, string summary) 
+        public void EditTask(string desc, float estimate, string status, string priority, string summary)
         {
-            if (desc != Description) 
+            if (desc != Description)
             {
                 Description = desc;
                 string comm = "UPDATE tasks SET description = @des WHERE id = @ID";
@@ -525,7 +527,7 @@ namespace InOneBoat
                     cmd.ExecuteNonQuery();
                 }
             }
-            if(status != Status)
+            if (status != Status)
             {
                 Status = status;
                 int stID = 0;
@@ -549,7 +551,7 @@ namespace InOneBoat
                     cmd.ExecuteNonQuery();
                 }
             }
-            if(priority != Priority)
+            if (priority != Priority)
             {
                 Priority = priority;
                 int prID = 0;
@@ -587,6 +589,11 @@ namespace InOneBoat
                     cmd.ExecuteNonQuery();
                 }
             }
+        }
+
+        public List<int> getWatchersList()
+        {
+            return watchersList;
         }
     }
 }

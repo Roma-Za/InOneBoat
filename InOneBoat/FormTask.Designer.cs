@@ -284,7 +284,7 @@
             this.panel_New_Task.Controls.Add(this.label3);
             this.panel_New_Task.Location = new System.Drawing.Point(28, 27);
             this.panel_New_Task.Name = "panel_New_Task";
-            this.panel_New_Task.Size = new System.Drawing.Size(850, 402);
+            this.panel_New_Task.Size = new System.Drawing.Size(14, 402);
             this.panel_New_Task.TabIndex = 3;
             this.panel_New_Task.Visible = false;
             // 
@@ -437,9 +437,9 @@
             this.panel_Edit_Task.Controls.Add(this.label13);
             this.panel_Edit_Task.Controls.Add(this.textBox_P_Edit_Summ);
             this.panel_Edit_Task.Controls.Add(this.label14);
-            this.panel_Edit_Task.Location = new System.Drawing.Point(884, 24);
+            this.panel_Edit_Task.Location = new System.Drawing.Point(48, 24);
             this.panel_Edit_Task.Name = "panel_Edit_Task";
-            this.panel_Edit_Task.Size = new System.Drawing.Size(15, 402);
+            this.panel_Edit_Task.Size = new System.Drawing.Size(851, 402);
             this.panel_Edit_Task.TabIndex = 5;
             this.panel_Edit_Task.Visible = false;
             // 

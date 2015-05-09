@@ -11,9 +11,10 @@ namespace InOneBoat
         private string ValidMessage = "";
         private string login = "";
         private string password = "";
+
         public Form_authorization()
         {
-            InitializeComponent();           
+            InitializeComponent();
         }
 
         private void buttonOkAuthor_Click(object sender, EventArgs e)
@@ -23,7 +24,7 @@ namespace InOneBoat
 
         private void checkAut()
         {
-            
+
             string commandText = "SELECT user_types.name FROM users INNER JOIN user_types ON users.user_type_id = user_types.id WHERE (((users.user_name) = @login) AND ((users.password) = @pass))";
             login = textBoxLog.Text;
             password = maskedTextBoxPass.Text;
@@ -87,7 +88,8 @@ namespace InOneBoat
                     }
                 }
             }
-            else {
+            else
+            {
                 MessageBox.Show(ValidMessage);
             }
         }
@@ -96,8 +98,9 @@ namespace InOneBoat
         {
             Validator val = new Validator(str);
             val.addValidator(new InOneBoat.Validators.IsFilled());
-            if (!val.check()) {
-                ValidMessage += val.getCause(); 
+            if (!val.check())
+            {
+                ValidMessage += val.getCause();
                 return false;
             }
             return true;
@@ -108,8 +111,8 @@ namespace InOneBoat
             Recover rec = new Recover();
             this.Visible = false;
             rec.ShowDialog();
-                clearAuthorization();
-                this.Visible = true;
+            clearAuthorization();
+            this.Visible = true;
         }
 
         private void textBoxLog_KeyDown(object sender, KeyEventArgs e)
@@ -118,7 +121,7 @@ namespace InOneBoat
             {
                 checkAut();
             }
-            
+
         }
 
         private void maskedTextBoxPass_KeyDown(object sender, KeyEventArgs e)

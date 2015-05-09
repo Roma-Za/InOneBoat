@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace InOneBoat
@@ -13,7 +6,7 @@ namespace InOneBoat
     public partial class FormInput : Form
     {
         public string ReturnValue1 { get; set; }
-        
+
         public FormInput()
         {
             InitializeComponent();
@@ -21,7 +14,7 @@ namespace InOneBoat
 
         private void buttonOk_Click(object sender, EventArgs e)
         {
-            this.ReturnValue1 = richTextBoxComm.Text;         
+            this.ReturnValue1 = richTextBoxComm.Text;
             this.Close();
         }
     }
